@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Optional;
 
 public class StationService {
-    private static final int VALID_NAME_MINIMUM_LENGTH = 2;
     private final StationRepository stationRepository;
     private final LineRepository lineRepository;
 
@@ -17,7 +16,6 @@ public class StationService {
     }
 
     public Station createStation(String stationName) {
-        isValidNameLength(stationName);
         isUniqueName(stationName);
         Station station = new Station(stationName);
         return stationRepository.save(station);
@@ -35,12 +33,6 @@ public class StationService {
         Optional<Station> station = stationRepository.findByName(stationName);
         if (station.isPresent()) {
             throw new IllegalArgumentException("이미 존재하는 역 이름입니다.");
-        }
-    }
-
-    private void isValidNameLength(String stationName) {
-        if (stationName.length() < VALID_NAME_MINIMUM_LENGTH) {
-            throw new IllegalArgumentException("역의 이름은 2글자 이상이여야 합니다.");
         }
     }
 }
