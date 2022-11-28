@@ -19,11 +19,13 @@ class SectionServiceTest {
 
     SectionService sectionService;
     LineRepository lineRepository;
+    StationRepository stationRepository;
 
     @BeforeEach
     void beforeEach() {
+        stationRepository = new StationRepository();
         lineRepository = new LineRepository();
-        sectionService = new SectionService(new StationRepository(), lineRepository);
+        sectionService = new SectionService(stationRepository, lineRepository);
     }
 
     @DisplayName("구간 생성 테스트")
@@ -46,5 +48,35 @@ class SectionServiceTest {
         Assertions.assertThatThrownBy(() -> sectionService.registerSection(2, "4호선", "길음역"))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 등록되지 않은 노선입니다.");
+    }
+
+    @DisplayName("구간 삭제 테스트")
+    @Test
+    void deleteSectionTest() {
+        List<Station> stations = new ArrayList<>();
+        stations.add(stationRepository.save(new Station("성신여대입구역")));
+        stations.add(stationRepository.save(new Station("미아역")));
+        stations.add(stationRepository.save(new Station("길음역")));
+        Line line = new Line("4호선", stations);
+        lineRepository.save(line);
+        sectionService.deleteSection("4호선","미아역");
+
+        Assertions.assertThat(lineRepository.findByName("4호선").get().getStationsInLine()
+                        .stream()
+                        .anyMatch(station -> station.getName().equals("미아역"))).isFalse();
+    }
+
+    @DisplayName("구간 삭제시 등록되지 않은 역을 입력하면 오류를 발생")
+    @Test
+    void insertNotRegisteredStationTest() {
+        List<Station> stations = new ArrayList<>();
+        stations.add(stationRepository.save(new Station("성신여대입구역")));
+        stations.add(stationRepository.save(new Station("미아역")));
+        stations.add(stationRepository.save(new Station("길음역")));
+        Line line = new Line("4호선", stations);
+        lineRepository.save(line);
+        Assertions.assertThatThrownBy(() -> sectionService.deleteSection("4호선", "수유역"))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("[ERROR] 등록되지 않은 역 이름입니다.");
     }
 }
