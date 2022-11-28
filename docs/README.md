@@ -13,7 +13,8 @@
 >        - [x] 역 이름이 2글자 이상인가 - #isValidNameLength()
 > - [ ] 역 삭제 기능 - #deleteStationByName()
 >    - 예외처리
->        - [ ] 노선에 등록되어 있는지 확인 - #isRegistered()
+>      -[ ] 노선에 등록되어 있는지 확인 - #isRegisteredInLine()
+>      -[ ] 등록되어 있는 역인지 확인 - #isRegistered
 > - [x] 역 조회하는 기능 - #getStations()
 > ---
 > ### 지하철 역 Repository ClassName : StationRepository
