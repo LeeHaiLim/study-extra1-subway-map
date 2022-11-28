@@ -35,7 +35,7 @@
 >        - [ ] 중복되는 이름이 있는가 - #isUniqueName()
 >        - [ ] 노선 이름이 2글자 이상인가 - #isValidNameLength()
 > -[ ] 노선 삭제 기능 - #deleteLine()
-> -[ ] 노선 조회 기능 - #getStations()
+> -[ ] 노선 조회 기능 - #getLines()
 > -[ ] 역 이름으로 노선에서 역 조회 - #findByStationName()
 > ### 노선 Repository ClassName :  LineRepository
 > - [ ] 노선 등록하는 기능 - #saveLine()
@@ -49,6 +49,8 @@
 > -[ ] 구간 삭제 - #deleteSection()
 
 ### 사용자의 입력을 담당하는 클래스 ClassName : InputView
+> -[ ] 번호 입력 받기 - #readInteger()
+> -[ ] 이름 입력 받기 - #readName()
 
 ## 출력을 담당하는 클래스 ClassName : XXXOutputView
 > ### 지하철 역 관련 출력을 담당하는 클래스 ClassName : StationOutputView
