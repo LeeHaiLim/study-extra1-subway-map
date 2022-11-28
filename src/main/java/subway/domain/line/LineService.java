@@ -3,6 +3,7 @@ package subway.domain.line;
 import subway.domain.station.Station;
 
 import java.util.List;
+import java.util.Optional;
 
 public class LineService {
     private final LineRepository lineRepository;
@@ -11,8 +12,10 @@ public class LineService {
         this.lineRepository = lineRepository;
     }
 
-    public Station createLine(String lineName) {
-        return null;
+    public Line createLine(String lineName, List<Station> stations) {
+        isUniqueName(lineName);
+        Line line = new Line(lineName, stations);
+        return lineRepository.save(line);
     }
 
     public void deleteLine(String lineName) {
@@ -28,10 +31,9 @@ public class LineService {
     }
 
     private void isUniqueName(String lineName) {
-
-    }
-
-    private void isValidNameLength(String lineName) {
-
+        Optional<Line> line = lineRepository.findByName(lineName);
+        if (line.isPresent()) {
+            throw new IllegalArgumentException("이미 존재하는 노선 이름입니다.");
+        }
     }
 }

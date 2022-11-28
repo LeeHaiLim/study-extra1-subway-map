@@ -20,7 +20,7 @@
 > ### 지하철 역 Repository ClassName : StationRepository
 > - [x] 역 등록하는 기능 - #saveStation()
 > - [x] 역 조회하는 기능 - #findAllStations()
-> - [ ] 역 삭제 기능 - #deleteStationByName()
+> - [x] 역 삭제 기능 - #deleteStationByName()
 > -[x] 역 이름으로 조회 - #findByName()
 --- 
 ## 노선
@@ -32,10 +32,9 @@
 > -[ ] 노선 조회 - #getLines()
 > ---
 > ### 노선 Service ClassName : LineService
-> -[ ] 노선 등록하는 기능 - #createLine()
+> -[x] 노선 등록하는 기능 - #createLine()
 >    - 예외처리
->        - [ ] 중복되는 이름이 있는가 - #isUniqueName()
->        - [ ] 노선 이름이 2글자 이상인가 - #isValidNameLength()
+>        - [x] 중복되는 이름이 있는가 - #isUniqueName()
 > -[ ] 노선 삭제 기능 - #deleteLine()
 > -[ ] 노선 조회 기능 - #getLines()
 > ### 노선 Repository ClassName :  LineRepository
