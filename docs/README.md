@@ -49,7 +49,7 @@
 ---
 ## 구간
 > ### 구간 Service ClassName : SectionService
-> -[ ] 구간 등록 - #registerSection()
+> -[x] 구간 등록 - #registerSection()
 > -[ ] 구간 삭제 - #deleteSection()
 
 ### 사용자의 입력을 담당하는 클래스 ClassName : InputView
