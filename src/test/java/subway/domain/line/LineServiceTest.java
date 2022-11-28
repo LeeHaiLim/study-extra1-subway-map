@@ -21,7 +21,7 @@ class LineServiceTest {
     void setUp() {
         LineRepository lineRepository = new LineRepository();
         StationRepository stationRepository = new StationRepository();
-        lineService = new LineService(lineRepository,stationRepository);
+        lineService = new LineService(lineRepository, stationRepository);
         stationService = new StationService(stationRepository, lineRepository);
     }
 
@@ -46,5 +46,13 @@ class LineServiceTest {
         Assertions.assertThatThrownBy(() -> lineService.createLine("2호선", stationNames))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 등록되지 않은 역은 노선에 등록할 수 없습니다.");
+    }
+
+    @DisplayName("등록되지 않은 노선 검색시 예외를 발생")
+    @Test
+    void insertNotRegisteredLineTest() {
+        Assertions.assertThatThrownBy(() -> lineService.getLineByName("2호선"))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("[ERROR] 등록되지 않은 역은 노선이름입니다.");
     }
 }
