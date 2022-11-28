@@ -39,7 +39,7 @@
 > -[ ] 노선 삭제 기능 - #deleteLine()
 > -[ ] 노선 조회 기능 - #getLines()
 > ### 노선 Repository ClassName :  LineRepository
-> - [ ] 노선 등록하는 기능 - #saveLine()
+> - [x] 노선 등록하는 기능 - #saveLine()
 > - [ ] 노선 삭제하는 기능 - #deleteLineByName()
 > - [x] 노선 조회 기능 - #findAll()
 > - [ ] 노선 이름으로 조회 #findByName()

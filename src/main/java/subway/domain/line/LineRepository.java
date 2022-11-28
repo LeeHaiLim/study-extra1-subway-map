@@ -10,7 +10,8 @@ public class LineRepository implements Repository<Line> {
 
     @Override
     public Line save(Line line) {
-        return null;
+        lines.add(line);
+        return line;
     }
 
     @Override
