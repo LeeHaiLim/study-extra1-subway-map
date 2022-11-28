@@ -55,4 +55,18 @@ class LineServiceTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 등록되지 않은 역은 노선이름입니다.");
     }
+
+    @DisplayName("노선 삭제 기능 테스트")
+    @Test
+    void deleteLineTest() {
+        stationService.createStation("길음역");
+        stationService.createStation("성신여대입구역");
+
+        List<String> stationNames = Arrays.asList("길음역", "성신여대입구역");
+        lineService.createLine("2호선", stationNames);
+        lineService.deleteLine("2호선");
+
+        Assertions.assertThat(lineService.getLines().size()).isEqualTo(0);
+    }
+
 }
