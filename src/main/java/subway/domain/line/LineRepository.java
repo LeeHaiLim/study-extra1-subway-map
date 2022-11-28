@@ -21,7 +21,7 @@ public class LineRepository implements Repository<Line> {
 
     @Override
     public void delete(Line line) {
-
+        lines.remove(line);
     }
 
     @Override
