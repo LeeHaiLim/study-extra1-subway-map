@@ -28,7 +28,7 @@ public class StationService {
     }
 
     public List<Station> getStations() {
-        return null;
+        return stationRepository.findAll();
     }
 
     private void isUniqueName(String stationName) {

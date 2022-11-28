@@ -15,7 +15,7 @@ public class StationRepository implements Repository<Station> {
 
     @Override
     public List<Station> findAll() {
-        return null;
+        return Collections.unmodifiableList(stations);
     }
 
     @Override
