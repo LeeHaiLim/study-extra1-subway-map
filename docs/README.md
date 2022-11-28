@@ -54,7 +54,7 @@
 
 ### 사용자의 입력을 담당하는 클래스 ClassName : InputView
 > -[x] 번호 입력 받기 - #readInteger()
-> -[ ] 이름 입력 받기 - #readName()
+> -[x] 이름 입력 받기 - #readName()
 
 ## 출력을 담당하는 클래스 ClassName : XXXOutputView
 > ### 지하철 역 관련 출력을 담당하는 클래스 ClassName : StationOutputView
