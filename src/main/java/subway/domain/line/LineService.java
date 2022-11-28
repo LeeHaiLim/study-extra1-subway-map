@@ -32,6 +32,11 @@ public class LineService {
         return null;
     }
 
+    public Line getLineByName(String lineName) {
+        return lineRepository.findByName(lineName)
+                .orElseThrow(() -> new IllegalStateException("[ERROR] 등록되지 않은 역은 노선이름입니다."));
+    }
+
     private void isUniqueName(String lineName) {
         Optional<Line> line = lineRepository.findByName(lineName);
         if (line.isPresent()) {

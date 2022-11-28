@@ -40,7 +40,7 @@
 >       -[x] 역 이름 배열을 Station 배열로 변환 - #convertForm()
 > -[ ] 노선 삭제 기능 - #deleteLine()
 > -[ ] 노선 조회 기능 - #getLines()
-> -[ ] 노선 이름으로 조회 기능 - #getLineByName()
+> -[x] 노선 이름으로 조회 기능 - #getLineByName()
 > ### 노선 Repository ClassName :  LineRepository
 > - [x] 노선 등록하는 기능 - #saveLine()
 > - [ ] 노선 삭제하는 기능 - #deleteLineByName()
