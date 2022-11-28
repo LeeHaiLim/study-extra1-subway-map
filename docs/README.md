@@ -11,10 +11,10 @@
 >    - 예외처리
 >        - [x] 중복되는 이름이 있는가 - #isUniqueName()
 >        - [x] 역 이름이 2글자 이상인가 - #isValidNameLength()
-> - [ ] 역 삭제 기능 - #deleteStationByName()
+> - [x] 역 삭제 기능 - #deleteStationByName()
 >    - 예외처리
->      -[ ] 노선에 등록되어 있는지 확인 - #isRegisteredInLine()
->      -[ ] 등록되어 있는 역인지 확인 - #isRegistered
+>      -[x] 노선에 등록되어 있는지 확인 - #isRegisteredInLine()
+>      -[x] 등록되어 있는 역인지 확인 - #isRegistered()
 > - [x] 역 조회하는 기능 - #getStations()
 > ---
 > ### 지하철 역 Repository ClassName : StationRepository
@@ -41,7 +41,7 @@
 > ### 노선 Repository ClassName :  LineRepository
 > - [ ] 노선 등록하는 기능 - #saveLine()
 > - [ ] 노선 삭제하는 기능 - #deleteLineByName()
-> - [ ] 노선 조회 기능 - #findAllLines()
+> - [x] 노선 조회 기능 - #findAll()
 > - [ ] 노선 이름으로 조회 #findByName()
 ---
 ## 구간

@@ -38,14 +38,4 @@ class StationServiceTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("이미 존재하는 역 이름입니다.");
     }
-
-    @DisplayName("역 생성 시 이름이 2글자 이상이 아닌경우 오류를 발생")
-    @Test
-    void insertInvalidLengthNameTest() {
-        String stationName = "역";
-
-        Assertions.assertThatThrownBy(() -> stationService.createStation(stationName))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("역의 이름은 2글자 이상이여야 합니다.");
-    }
 }

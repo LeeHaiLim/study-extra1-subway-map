@@ -15,7 +15,7 @@ public class LineRepository implements Repository<Line> {
 
     @Override
     public List<Line> findAll() {
-        return null;
+        return Collections.unmodifiableList(lines);
     }
 
     @Override

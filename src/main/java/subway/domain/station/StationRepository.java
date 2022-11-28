@@ -20,7 +20,7 @@ public class StationRepository implements Repository<Station> {
 
     @Override
     public void delete(Station station) {
-
+        stations.remove(station);
     }
 
     @Override
