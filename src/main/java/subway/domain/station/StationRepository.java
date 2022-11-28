@@ -9,7 +9,8 @@ public class StationRepository implements Repository<Station> {
 
     @Override
     public Station save(Station station) {
-        return null;
+        stations.add(station);
+        return station;
     }
 
     @Override

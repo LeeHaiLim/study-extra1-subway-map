@@ -7,17 +7,17 @@
 > - [ ] 역 조회 - #getStations()
 > ---
 > ### 지하철 역 Service ClassName : StationService()
-> - [ ] 역 등록하는 기능 - #createStation()
+> - [x] 역 등록하는 기능 - #createStation()
 >    - 예외처리
->        - [ ] 중복되는 이름이 있는가 - #isUniqueName()
->        - [ ] 역 이름이 2글자 이상인가 - #isValidNameLength()
+>        - [x] 중복되는 이름이 있는가 - #isUniqueName()
+>        - [x] 역 이름이 2글자 이상인가 - #isValidNameLength()
 > - [ ] 역 삭제 기능 - #deleteStationByName()
 >    - 예외처리
 >        - [ ] 노선에 등록되어 있는지 확인 - #isRegistered()
 > - [ ] 역 조회하는 기능 - #getStations()
 > ---
 > ### 지하철 역 Repository ClassName : StationRepository
-> - [ ] 역 등록하는 기능 - #saveStation()
+> - [x] 역 등록하는 기능 - #saveStation()
 > - [ ] 역 조회하는 기능 - #findAllStations()
 > - [ ] 역 삭제 기능 - #deleteStationByName()
 --- 
