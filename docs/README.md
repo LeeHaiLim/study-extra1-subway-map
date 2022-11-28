@@ -36,6 +36,8 @@
 > -[x] 노선 등록하는 기능 - #createLine()
 >    - 예외처리
 >        - [x] 중복되는 이름이 있는가 - #isUniqueName()
+>       -[x] 입력한 역이 등록되어있는 역인가 -#isRegisteredStation()
+>       -[x] 역 이름 배열을 Station 배열로 변환 - #convertForm()
 > -[ ] 노선 삭제 기능 - #deleteLine()
 > -[ ] 노선 조회 기능 - #getLines()
 > ### 노선 Repository ClassName :  LineRepository
