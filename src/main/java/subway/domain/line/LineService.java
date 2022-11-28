@@ -18,7 +18,7 @@ public class LineService {
 
     public Line createLine(String lineName, List<String> stationNames) {
         isUniqueName(lineName);
-        isRegisteredStation(stationNames);
+        registerStation(stationNames);
         List<Station> stations = convertForm(stationNames);
         Line line = new Line(lineName, stations);
         return lineRepository.save(line);
@@ -45,13 +45,11 @@ public class LineService {
         }
     }
 
-    private void isRegisteredStation(List<String> stationNames) {
-        Optional<String> station = stationNames.stream()
+    private void registerStation(List<String> stationNames) {
+        stationNames.stream()
                 .filter(stationName -> stationRepository.findByName(stationName).isEmpty())
-                .findAny();
-        if (station.isPresent()) {
-            throw new IllegalArgumentException("[ERROR] 등록되지 않은 역은 노선에 등록할 수 없습니다.");
-        }
+                .map(Station::new)
+                .forEach(stationRepository::save);
     }
 
     private List<Station> convertForm(List<String> stationNames) {
