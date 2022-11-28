@@ -53,7 +53,7 @@
 > -[x] 구간 삭제 - #deleteSection()
 
 ### 사용자의 입력을 담당하는 클래스 ClassName : InputView
-> -[ ] 번호 입력 받기 - #readInteger()
+> -[x] 번호 입력 받기 - #readInteger()
 > -[ ] 이름 입력 받기 - #readName()
 
 ## 출력을 담당하는 클래스 ClassName : XXXOutputView
