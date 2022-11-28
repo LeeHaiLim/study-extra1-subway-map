@@ -1,5 +1,5 @@
 # 기능 목록
-
+- 시간 내에 구현한 기능
 ## 역 관련
 > ### 지하철 역 Controller ClassName : StationController
 > - [ ] 역 등록 - #createStation()
