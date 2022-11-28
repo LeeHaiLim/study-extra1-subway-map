@@ -1,6 +1,5 @@
 package subway.domain.station;
 
-import subway.domain.line.Line;
 import subway.domain.line.LineRepository;
 
 import java.util.List;
@@ -22,9 +21,8 @@ public class StationService {
     }
 
     public void deleteStation(String stationName) {
-        isRegistered(stationName);
+        Station station = registeredStation(stationName);
         isRegisteredInLine(stationName);
-        Station station = stationRepository.findByName(stationName).get();
         stationRepository.delete(station);
     }
 
@@ -39,8 +37,8 @@ public class StationService {
         }
     }
 
-    private void isRegistered(String stationName) {
-        Station station = stationRepository.findByName(stationName)
+    private Station registeredStation(String stationName) {
+        return stationRepository.findByName(stationName)
                 .orElseThrow(() -> new IllegalArgumentException("[ERROR] 입력하신 역이 등록되어 있지 않습니다."));
     }
 
