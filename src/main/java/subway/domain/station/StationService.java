@@ -30,6 +30,10 @@ public class StationService {
         return stationRepository.findAll();
     }
 
+    public Station getStationByName(String stationName) {
+        return registeredStation(stationName);
+    }
+
     private void isUniqueName(String stationName) {
         Optional<Station> station = stationRepository.findByName(stationName);
         if (station.isPresent()) {

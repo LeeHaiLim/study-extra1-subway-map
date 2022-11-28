@@ -16,6 +16,7 @@
 >      -[x] 노선에 등록되어 있는지 확인 - #isRegisteredInLine()
 >      -[x] 등록되어 있는 역인지 확인 - #isRegistered()
 > - [x] 역 조회하는 기능 - #getStations()
+> -[x] 역 이름으로 조회 기능 - #getStationByName()
 > ---
 > ### 지하철 역 Repository ClassName : StationRepository
 > - [x] 역 등록하는 기능 - #saveStation()
