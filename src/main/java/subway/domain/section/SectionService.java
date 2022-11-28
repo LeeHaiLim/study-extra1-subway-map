@@ -23,7 +23,12 @@ public class SectionService {
         line.getStationsInLine().add(position - 1, station);
     }
 
-    public void deleteSection() {
+    public void deleteSection(String lineName, String stationName) {
+        Line line = lineRepository.findByName(lineName)
+                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 등록되지 않은 노선입니다."));
+        Station station = stationRepository.findByName(stationName)
+                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 등록되지 않은 역 이름입니다."));
 
+        line.getStationsInLine().remove(station);
     }
 }
