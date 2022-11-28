@@ -5,7 +5,7 @@ import subway.domain.Repository;
 import java.util.*;
 
 public class StationRepository implements Repository<Station> {
-    private static final List<Station> stations = new ArrayList<>();
+    private final List<Station> stations = new ArrayList<>();
 
     @Override
     public Station save(Station station) {

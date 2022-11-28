@@ -6,7 +6,7 @@ import subway.domain.line.Line;
 import java.util.*;
 
 public class LineRepository implements Repository<Line> {
-    private static final List<Line> lines = new ArrayList<>();
+    private final List<Line> lines = new ArrayList<>();
 
     @Override
     public Line save(Line line) {
