@@ -1,22 +1,30 @@
-package subway.domain;
+package subway.domain.line;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import subway.domain.Repository;
+import subway.domain.line.Line;
 
-public class LineRepository {
+import java.util.*;
+
+public class LineRepository implements Repository<Line> {
     private static final List<Line> lines = new ArrayList<>();
 
-    public static List<Line> lines() {
-        return Collections.unmodifiableList(lines);
+    @Override
+    public Line save(Line line) {
+        return null;
     }
 
-    public static void addLine(Line line) {
-        lines.add(line);
+    @Override
+    public List<Line> findAll() {
+        return null;
     }
 
-    public static boolean deleteLineByName(String name) {
-        return lines.removeIf(line -> Objects.equals(line.getName(), name));
+    @Override
+    public void delete(Line line) {
+
+    }
+
+    @Override
+    public Optional<Line> findByName(String name) {
+        return Optional.empty();
     }
 }

@@ -1,22 +1,29 @@
-package subway.domain;
+package subway.domain.station;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import subway.domain.Repository;
 
-public class StationRepository {
+import java.util.*;
+
+public class StationRepository implements Repository<Station> {
     private static final List<Station> stations = new ArrayList<>();
 
-    public static List<Station> stations() {
-        return Collections.unmodifiableList(stations);
+    @Override
+    public Station save(Station station) {
+        return null;
     }
 
-    public static void addStation(Station station) {
-        stations.add(station);
+    @Override
+    public List<Station> findAll() {
+        return null;
     }
 
-    public static boolean deleteStation(String name) {
-        return stations.removeIf(station -> Objects.equals(station.getName(), name));
+    @Override
+    public void delete(Station station) {
+
+    }
+
+    @Override
+    public Optional<Station> findByName(String name) {
+        return Optional.empty();
     }
 }
