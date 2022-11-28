@@ -25,6 +25,8 @@ public class StationRepository implements Repository<Station> {
 
     @Override
     public Optional<Station> findByName(String name) {
-        return Optional.empty();
+        return stations.stream()
+                .filter(station -> station.getName().equals(name))
+                .findAny();
     }
 }

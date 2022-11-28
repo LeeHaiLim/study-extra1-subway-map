@@ -20,7 +20,7 @@
 > - [x] 역 등록하는 기능 - #saveStation()
 > - [x] 역 조회하는 기능 - #findAllStations()
 > - [ ] 역 삭제 기능 - #deleteStationByName()
-> -[ ] 역 이름으로 조회 - #findByName()
+> -[x] 역 이름으로 조회 - #findByName()
 --- 
 ## 노선
 > ### 노선 Controller ClassName : LineController
