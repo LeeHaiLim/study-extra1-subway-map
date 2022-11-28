@@ -26,10 +26,6 @@ public class LineService {
         return null;
     }
 
-    public Station findByStationName() {
-        return null;
-    }
-
     private void isUniqueName(String lineName) {
         Optional<Line> line = lineRepository.findByName(lineName);
         if (line.isPresent()) {

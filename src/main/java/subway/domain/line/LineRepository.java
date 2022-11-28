@@ -25,7 +25,9 @@ public class LineRepository implements Repository<Line> {
     }
 
     @Override
-    public Optional<Line> findByName(String name) {
-        return Optional.empty();
+    public Optional<Line> findByName(String lineName) {
+        return lines.stream()
+                .filter(line -> line.getName().equals(lineName))
+                .findAny();
     }
 }
