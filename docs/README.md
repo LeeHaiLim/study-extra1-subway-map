@@ -18,8 +18,9 @@
 > ---
 > ### 지하철 역 Repository ClassName : StationRepository
 > - [x] 역 등록하는 기능 - #saveStation()
-> - [ ] 역 조회하는 기능 - #findAllStations()
+> - [x] 역 조회하는 기능 - #findAllStations()
 > - [ ] 역 삭제 기능 - #deleteStationByName()
+> -[ ] 역 이름으로 조회 - #findByName()
 --- 
 ## 노선
 > ### 노선 Controller ClassName : LineController
@@ -36,12 +37,11 @@
 >        - [ ] 노선 이름이 2글자 이상인가 - #isValidNameLength()
 > -[ ] 노선 삭제 기능 - #deleteLine()
 > -[ ] 노선 조회 기능 - #getLines()
-> -[ ] 역 이름으로 노선에서 역 조회 - #findByStationName()
 > ### 노선 Repository ClassName :  LineRepository
 > - [ ] 노선 등록하는 기능 - #saveLine()
 > - [ ] 노선 삭제하는 기능 - #deleteLineByName()
 > - [ ] 노선 조회 기능 - #findAllLines()
-> - [ ] 노선 내 역이름으로 조회 #findByStationName()
+> - [ ] 노선 이름으로 조회 #findByName()
 ---
 ## 구간
 > ### 구간 Service ClassName : SectionService
