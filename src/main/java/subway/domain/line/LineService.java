@@ -29,8 +29,8 @@ public class LineService {
         lineRepository.delete(line);
     }
 
-    public List<Station> getLines() {
-        return null;
+    public List<Line> getLines() {
+        return lineRepository.findAll();
     }
 
     public Line getLineByName(String lineName) {
