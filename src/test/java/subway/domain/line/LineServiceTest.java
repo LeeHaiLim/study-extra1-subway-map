@@ -37,15 +37,14 @@ class LineServiceTest {
         Assertions.assertThat(lineService.getLineByName("2호선").getStationsInLine().size()).isEqualTo(2);
     }
 
-    @DisplayName("노선 생성 시 등록되지 않은 역을 입력하는 경우 예외를 발생")
+    @DisplayName("노선 생성 시 등록되지 않은 역을 입력하는 경우 역 등록 후 노선 생성")
     @Test
     void insertNotRegisteredStationTest() {
         List<String> stationNames = Arrays.asList("길음역", "성신여대입구역");
 
-
-        Assertions.assertThatThrownBy(() -> lineService.createLine("2호선", stationNames))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("[ERROR] 등록되지 않은 역은 노선에 등록할 수 없습니다.");
+        lineService.createLine("4호선", stationNames);
+        Assertions.assertThat(lineService.getLineByName("4호선").getStationsInLine().size())
+                .isEqualTo(2);
     }
 
     @DisplayName("등록되지 않은 노선 검색시 예외를 발생")

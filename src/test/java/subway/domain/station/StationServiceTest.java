@@ -14,11 +14,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class StationServiceTest {
 
     StationService stationService;
+    LineRepository lineRepository;
 
     @BeforeEach
     void setUp() {
         StationRepository stationRepository = new StationRepository();
-        LineRepository lineRepository = new LineRepository();
+        lineRepository = new LineRepository();
         stationService = new StationService(stationRepository, lineRepository);
     }
 
@@ -72,7 +73,6 @@ class StationServiceTest {
         List<Station> stations = List.of(station1, station2);
 
         Line line = new Line("4호선", stations);
-        LineRepository lineRepository = new LineRepository();
         lineRepository.save(line);
         Assertions.assertThatThrownBy(() -> stationService.deleteStation("길음역"))
                 .isInstanceOf(IllegalArgumentException.class)
