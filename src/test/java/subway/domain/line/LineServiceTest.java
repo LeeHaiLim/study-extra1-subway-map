@@ -69,4 +69,22 @@ class LineServiceTest {
         Assertions.assertThat(lineService.getLines().size()).isEqualTo(0);
     }
 
+    @DisplayName("전체 노선 조회 기능 테스트")
+    @Test
+    void getLinesTest() {
+        stationService.createStation("길음역");
+        stationService.createStation("성신여대입구역");
+
+        List<String> stationNames1 = Arrays.asList("길음역", "성신여대입구역");
+        lineService.createLine("2호선", stationNames1);
+
+        stationService.createStation("종각역");
+        stationService.createStation("종로3가역");
+
+        List<String> stationNames2 = Arrays.asList("종각역", "종로3가역");
+        lineService.createLine("1호선", stationNames2);
+
+        Assertions.assertThat(lineService.getLines().size()).isEqualTo(2);
+    }
+
 }
