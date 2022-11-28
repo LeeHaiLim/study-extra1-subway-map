@@ -34,7 +34,7 @@ public class LineService {
 
     public Line getLineByName(String lineName) {
         return lineRepository.findByName(lineName)
-                .orElseThrow(() -> new IllegalStateException("[ERROR] 등록되지 않은 역은 노선이름입니다."));
+                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 등록되지 않은 역은 노선이름입니다."));
     }
 
     private void isUniqueName(String lineName) {
