@@ -30,19 +30,19 @@
 - [ ] 구간 삭제 안내 문구 출력 `[INFO] 구간이 삭제되었습니다.` - printDeleteSectionMessage
 
 ### 서비스 관리 인터페이스 -> MenuManagement
-- [ ] 존재하는 서비스의 번호인지 확인하는 기능 - isExistsServiceNumber
+- [x] 존재하는 서비스의 번호인지 확인하는 기능 - isExistsServiceNumber
 
 ### 메인 관리 enum -> MainManagement
-STATION_MANAGEMENT, LINE_MANAGEMENT, SECTION_MANAGEMENT, QUIT
+STATION_MANAGEMENT, LINE_MANAGEMENT, SECTION_MANAGEMENT, QUIT, NONE
 
 ### 역 관리 enum -> StationManagement
-STATION_ADD, STATION_DELETE, STATION_LIST, BACK
+STATION_ADD, STATION_DELETE, STATION_LIST, BACK, NONE
 
 ### 노선 관리 enum -> LineManagement
-LINE_ADD, LINE_DELETE, LINE_LIST, BACK
+LINE_ADD, LINE_DELETE, LINE_LIST, BACK, NONE
 
 ### 구간 관리 enum -> SectionManagement
-SECTION_ADD, SECTION_DELETE, BACK
+SECTION_ADD, SECTION_DELETE, BACK, NONE
 
 ### 지하철 역 이름 클래스 -> StationName
 - [ ] 역 이름을 받아 역 이름 클래스를 반환하는 기능 - of
