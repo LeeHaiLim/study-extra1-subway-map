@@ -1,4 +1,6 @@
-package subway.domain;
+package subway.repository;
+
+import subway.domain.Station;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,7 +15,17 @@ public class StationRepository {
     }
 
     public static void addStation(Station station) {
+        if (isExistsStation(station)) {
+            throw new IllegalArgumentException("[ERROR] 이미 존재하는 역입니다.");
+        }
         stations.add(station);
+    }
+
+    public static boolean isExistsStation(Station station) {
+        if (stations.contains(station)) {
+            return true;
+        }
+        return false;
     }
 
     public static boolean deleteStation(String name) {
