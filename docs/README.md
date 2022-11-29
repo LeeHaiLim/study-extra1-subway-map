@@ -45,8 +45,11 @@ LINE_ADD, LINE_DELETE, LINE_LIST, BACK, NONE
 SECTION_ADD, SECTION_DELETE, BACK, NONE
 
 ### 지하철 역 이름 클래스 -> StationName
-- [ ] 역 이름을 받아 역 이름 클래스를 반환하는 기능 - of
-- [ ] 지하철 역 이름은 2글자 이상이어야 한다. - validStationNameLength
+- [x] 역 이름을 받아 역 이름 클래스를 반환하는 기능 - of
+- [x] 지하철 역 이름 예외처리 validStationName
+  - [x] 지하철 역 이름은 공백이 들어갈 수 없다. - validIncludeBlank
+  - [x] 지하철 역 이름은 '역'으로 끝나야 한다. - validSuffixStationName
+  - [x] 지하철 역 이름은 2글자 이상이어야 한다. - validStationNameLength
 
 ### 지하철 노선 이름 클래스 -> LineName
 - [ ] 노선 이름을 받아 역 이름 클래스를 반환하는 기능 - of
