@@ -1,15 +1,32 @@
 package subway.domain;
 
-public class Line {
-    private String name;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Line(String name) {
+public class Line {
+    private LineName name;
+    private List<Station> stationsBelongTo = new ArrayList<>();
+
+    private Line(LineName name) {
         this.name = name;
     }
 
-    public String getName() {
+    public static Line of(LineName name) {
+        return new Line(name);
+    }
+
+    public LineName getName() {
         return name;
     }
 
-    // 추가 기능 구현
+    public void addStationToLineByOrder(int index, Station station) {
+        validStationDuplicate(station);
+        stationsBelongTo.add(index + 1, station);
+    }
+
+    private void validStationDuplicate(Station station) {
+        if (stationsBelongTo.contains(station)) {
+            throw new IllegalArgumentException("[ERROR] 이미 속해있는 역입니다.");
+        }
+    }
 }
