@@ -1,6 +1,7 @@
 package subway.repository;
 
 import subway.domain.Station;
+import subway.domain.StationName;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,7 +29,9 @@ public class StationRepository {
         return false;
     }
 
-    public static boolean deleteStation(String name) {
-        return stations.removeIf(station -> Objects.equals(station.getName(), name));
+    public static void deleteStation(StationName name) {
+        if (!(stations.removeIf(station -> Objects.equals(station.getName(), name)))) {
+            throw new IllegalArgumentException("[ERROR] 존재하지 않는 역입니다.");
+        }
     }
 }
