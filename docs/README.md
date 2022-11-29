@@ -95,8 +95,8 @@ SECTION_ADD, SECTION_DELETE, BACK, NONE
 
 
 ### 지하철 역 저장소 -> StationRepository
-- [ ] 지하철 역 저장소에 등록하는 기능 - addStation
-- [ ] 존재하는 역인지 확인하는 기능 - isExistsStation
+- [x] 지하철 역 저장소에 등록하는 기능 - addStation
+  - [x] 존재하는 역인지 확인하는 기능 - isExistsStation
 - [ ] 지하철 역을 저장소에서 삭제하는 기능 - deleteStationByName
 - [ ] 노선에 등록된 지하철 역을 저장속에서 삭제하는 기능 - deleteBelongToLineStationByName
 - [ ] 등록된 역 이름 리스트를 반환하는 기능 - getStationNames
