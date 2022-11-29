@@ -101,9 +101,9 @@ SECTION_ADD, SECTION_DELETE, BACK, NONE
 - [ ] 등록된 역 이름 리스트를 반환하는 기능 - getStationNames
 
 ### 지하철 노선의 저장소 -> LineRepository
-- [ ] 지하철 노선 저장소에 등록하는 기능 - addLine
+- [x] 지하철 노선 저장소에 등록하는 기능 - addLine
+  - [x] 존재하는 노선인지 확인하는 기능 - isExistsLine
 - [ ] 지하철 노선을 저장소에서 삭제하는 기능 - deleteLineByName
-- [ ] 존재하는 노선인지 확인하는 기능 - isExistsLine
 - [ ] 노선에 포함된 역의 갯수를 반환하는 기능 - findNumberOfStation
 - [ ] 등록된 노선 이름 리스트를 반환하는 기능 - getLineNames
 - [ ] 등록된 노선에 속한 역 이름을 반환하는 기능 - getLineAndStations
