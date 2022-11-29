@@ -59,8 +59,9 @@ SECTION_ADD, SECTION_DELETE, BACK, NONE
   - [x] 지하철 노선 이름은 2글자 이상이어야 한다. - validLineNameLength
 
 ### 지하철 역 -> Station
-- [ ] 이름을 받아 역 객체를 생성하여 반환하는 기능 -> of
-- [ ] 지나는 노선을 등록하는 기능 - addLineBelongToStation### 지하철 역 -> Station
+- [x] 이름을 받아 역 객체를 생성하여 반환하는 기능 -> of
+- [x] 지나는 노선을 등록하는 기능 - addLineBelongToStation
+  - [x] 이미 등록되어있는 노선인지 확인하는 기능 - validLineDuplicate
 
 ### 지하철 노선 -> Line
 - [ ] 노선 이름을 받아 노선 객체를 생성하여 반환하는 기능 -> of
