@@ -1,28 +1,68 @@
 package subway.domain.line;
 
-import subway.domain.station.Station;
+import subway.ui.input.InputView;
+import subway.ui.output.LineOutputView;
+import subway.ui.output.StationOutputView;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static subway.domain.line.LineFunction.*;
 
 public class LineController {
-    public Station createLine() {
-        return null;
+    private final LineService lineService;
+
+    public LineController(LineService lineService) {
+        this.lineService = lineService;
     }
 
-    public void deleteLine() {
-
+    public void run() {
+        LineOutputView.printManagingPage();
+        LineFunction function = LineFunction.from(InputView.readMain());
+        navigate(function);
     }
 
-    public List<Station> getLine() {
-        return null;
+    private void navigate(LineFunction function) {
+        if (function.equals(CREATE_LINE)) {
+            createLine(getLineName(), getLineStart(), getLineEnd());
+        }
+        if (function.equals(DELETE_LINE)) {
+            deleteLine(getLineName());
+        }
+        if (function.equals(SHOW_LINE)) {
+            LineOutputView.printLines(getLines().stream().map(Line::getName).collect(Collectors.toList()));
+        }
     }
 
-    private Station getLineStart() {
-        return null;
+    public Line createLine(String lineName, String lineStart, String lineEnd) {
+        List<String> stationNames = new ArrayList<>();
+        stationNames.add(lineStart);
+        stationNames.add(lineEnd);
+        return lineService.createLine(lineName, stationNames);
     }
 
-    private Station getLineEnd() {
-        return null;
+    public void deleteLine(String lineName) {
+        lineService.deleteLine(lineName);
+    }
+
+    public List<Line> getLines() {
+        return lineService.getLines();
+    }
+
+    private String getLineStart() {
+        LineOutputView.askLineStart();
+        return InputView.readName();
+    }
+
+    private String getLineEnd() {
+        LineOutputView.askLineEnd();
+        return InputView.readName();
+    }
+
+    private String getLineName() {
+        LineOutputView.askLineName();
+        return InputView.readName();
     }
 
 }

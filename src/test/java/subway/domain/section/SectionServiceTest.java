@@ -36,7 +36,7 @@ class SectionServiceTest {
         stations.add(new Station("미아역"));
         Line line = new Line("4호선", stations);
         lineRepository.save(line);
-        sectionService.registerSection(2,"4호선","길음역");
+        sectionService.registerSection("4호선", "길음역", 2);
 
         Assertions.assertThat(lineRepository.findByName("4호선").get().getStationsInLine().get(1).getName())
                 .isEqualTo("길음역");
@@ -45,7 +45,7 @@ class SectionServiceTest {
     @DisplayName("구간 생성 시 등록되지 않은 노선 이름을 입력하면 예외를 발생")
     @Test
     void insertNotRegisteredLineNameTest() {
-        Assertions.assertThatThrownBy(() -> sectionService.registerSection(2, "4호선", "길음역"))
+        Assertions.assertThatThrownBy(() -> sectionService.registerSection("4호선", "길음역", 2))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 등록되지 않은 노선입니다.");
     }
@@ -59,11 +59,11 @@ class SectionServiceTest {
         stations.add(stationRepository.save(new Station("길음역")));
         Line line = new Line("4호선", stations);
         lineRepository.save(line);
-        sectionService.deleteSection("4호선","미아역");
+        sectionService.deleteSection("4호선", "미아역");
 
         Assertions.assertThat(lineRepository.findByName("4호선").get().getStationsInLine()
-                        .stream()
-                        .anyMatch(station -> station.getName().equals("미아역"))).isFalse();
+                .stream()
+                .anyMatch(station -> station.getName().equals("미아역"))).isFalse();
     }
 
     @DisplayName("구간 삭제시 등록되지 않은 역을 입력하면 오류를 발생")

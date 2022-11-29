@@ -14,7 +14,7 @@ public class SectionService {
         this.lineRepository = lineRepository;
     }
 
-    public void registerSection(int position, String lineName, String stationName) {
+    public void registerSection(String lineName, String stationName, int position) {
         Line line = lineRepository.findByName(lineName)
                 .orElseThrow(() -> new IllegalArgumentException("[ERROR] 등록되지 않은 노선입니다."));
         Station station = stationRepository.findByName(stationName)
