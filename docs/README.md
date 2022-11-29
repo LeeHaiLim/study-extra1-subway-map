@@ -64,8 +64,9 @@ SECTION_ADD, SECTION_DELETE, BACK, NONE
   - [x] 이미 등록되어있는 노선인지 확인하는 기능 - validLineDuplicate
 
 ### 지하철 노선 -> Line
-- [ ] 노선 이름을 받아 노선 객체를 생성하여 반환하는 기능 -> of
-- [ ] 지하철 노선의 지정된 순서에 역을 등록하는 기능 - addStationToLineByOrder
+- [x] 노선 이름을 받아 노선 객체를 생성하여 반환하는 기능 -> of
+- [x] 지하철 노선의 지정된 순서에 역을 등록하는 기능 - addStationToLineByOrder
+  - [x] 이미 등록되어있는 역인지 확인하는 기능 - validStationDuplicate
 
 ### 지하철 역 관련 기능 -> StationController
 - [ ] 지하철 역을 등록하는 기능 - addStation
