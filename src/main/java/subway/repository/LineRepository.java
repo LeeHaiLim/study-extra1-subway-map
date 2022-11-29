@@ -1,7 +1,7 @@
 package subway.repository;
 
 import subway.domain.Line;
-import subway.domain.Station;
+import subway.domain.LineName;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,6 +21,7 @@ public class LineRepository {
         }
         lines.add(line);
     }
+
     public static boolean isExistsLine(Line line) {
         if (lines.contains(line)) {
             return true;
@@ -28,7 +29,9 @@ public class LineRepository {
         return false;
     }
 
-    public static boolean deleteLineByName(String name) {
-        return lines.removeIf(line -> Objects.equals(line.getName(), name));
+    public static void deleteLineByName(LineName name) {
+        if (!(lines.removeIf(line -> Objects.equals(line.getName(), name)))) {
+            throw new IllegalArgumentException("[ERROR] 존재하지 않는 노선입니다.");
+        }
     }
 }
