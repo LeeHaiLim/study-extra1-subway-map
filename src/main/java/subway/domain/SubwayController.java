@@ -30,8 +30,12 @@ public class SubwayController {
         init();
         Main from = Main.BEFORE;
         while(!from.equals(Main.QUIT)) {
-            from = start();
-            navigate(from);
+            try {
+                from = start();
+                navigate(from);
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 

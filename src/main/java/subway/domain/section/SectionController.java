@@ -19,9 +19,26 @@ public class SectionController {
     }
 
     public void run() {
-        SectionOutputView.printManagingPage();
-        SectionFunction function = SectionFunction.from(InputView.readMain());
-        navigate(function);
+        while (true){
+            try {
+                SectionOutputView.printManagingPage();
+                SectionFunction function = getSectionFunction();
+                navigate(function);
+                return;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    private SectionFunction getSectionFunction() {
+        while (true) {
+            try {
+                return SectionFunction.from(InputView.readMain());
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     private void navigate(SectionFunction function) {
@@ -29,7 +46,7 @@ public class SectionController {
             registerSection(getLineName(), getStationName(), getPosition());
         }
         if (function.equals(DELETE_SECTION)) {
-            deleteSection(getLineName(),getStationName());
+            deleteSection(getLineName(), getStationName());
         }
     }
 
@@ -37,7 +54,7 @@ public class SectionController {
         sectionService.registerSection(lineName, stationName, position);
     }
 
-    public void deleteSection(String lineName,String stationName) {
+    public void deleteSection(String lineName, String stationName) {
         sectionService.deleteSection(lineName, stationName);
     }
 

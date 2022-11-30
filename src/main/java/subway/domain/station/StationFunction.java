@@ -18,6 +18,6 @@ public enum StationFunction {
         return Arrays.stream(StationFunction.values())
                 .filter(function -> function.stationFunction.equals(stationFunction))
                 .findAny()
-                .orElseThrow(() -> new IllegalStateException("[ERROR] 선택할 수 없는 기능입니다."));
+                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 선택할 수 없는 기능입니다."));
     }
 }

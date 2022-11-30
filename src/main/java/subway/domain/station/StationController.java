@@ -19,9 +19,26 @@ public class StationController {
     }
 
     public void run() {
-        StationOutputView.printManagingPage();
-        StationFunction function = StationFunction.from(InputView.readMain());
-        navigate(function);
+        while (true) {
+            try {
+                StationOutputView.printManagingPage();
+                StationFunction function = getStationFunction();
+                navigate(function);
+                return;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    private StationFunction getStationFunction() {
+        while (true) {
+            try {
+                return  StationFunction.from(InputView.readMain());
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     private void navigate(StationFunction function) {

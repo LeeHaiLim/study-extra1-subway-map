@@ -20,6 +20,6 @@ public enum Main {
         return Arrays.stream(Main.values())
                 .filter(mainInput -> mainInput.mainFunction.equals(mainFunction))
                 .findAny()
-                .orElseThrow(() -> new IllegalStateException("[ERROR] 선택할 수 없는 기능입니다."));
+                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 선택할 수 없는 기능입니다."));
     }
 }

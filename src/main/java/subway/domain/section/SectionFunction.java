@@ -17,6 +17,6 @@ public enum SectionFunction {
         return Arrays.stream(SectionFunction.values())
                 .filter(function -> function.sectionFunction.equals(sectionFunction))
                 .findAny()
-                .orElseThrow(() -> new IllegalStateException("[ERROR] 선택할 수 없는 기능입니다."));
+                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 선택할 수 없는 기능입니다."));
     }
 }

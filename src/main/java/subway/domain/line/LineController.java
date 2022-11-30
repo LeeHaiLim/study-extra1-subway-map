@@ -1,5 +1,6 @@
 package subway.domain.line;
 
+import subway.domain.station.StationFunction;
 import subway.ui.input.InputView;
 import subway.ui.output.LineOutputView;
 import subway.ui.output.StationOutputView;
@@ -18,9 +19,26 @@ public class LineController {
     }
 
     public void run() {
-        LineOutputView.printManagingPage();
-        LineFunction function = LineFunction.from(InputView.readMain());
-        navigate(function);
+        while(true) {
+            try {
+                LineOutputView.printManagingPage();
+                LineFunction function = getLineFunction();
+                navigate(function);
+                return;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    private LineFunction getLineFunction() {
+        while (true) {
+            try {
+                return  LineFunction.from(InputView.readMain());
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     private void navigate(LineFunction function) {
