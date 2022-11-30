@@ -33,8 +33,8 @@ public class SectionController {
         }
     }
 
-    public void registerSection(String lineName, String stationName, int potision) {
-        sectionService.registerSection(lineName, stationName, potision);
+    public void registerSection(String lineName, String stationName, int position) {
+        sectionService.registerSection(lineName, stationName, position);
     }
 
     public void deleteSection(String lineName,String stationName) {
