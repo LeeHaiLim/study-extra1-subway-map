@@ -37,7 +37,7 @@ public class StationService {
     private void isUniqueName(String stationName) {
         Optional<Station> station = stationRepository.findByName(stationName);
         if (station.isPresent()) {
-            throw new IllegalArgumentException("이미 존재하는 역 이름입니다.");
+            throw new IllegalArgumentException("[ERROR] 이미 존재하는 역 이름입니다.");
         }
     }
 

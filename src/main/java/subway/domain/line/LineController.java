@@ -57,11 +57,14 @@ public class LineController {
         List<String> stationNames = new ArrayList<>();
         stationNames.add(lineStart);
         stationNames.add(lineEnd);
-        return lineService.createLine(lineName, stationNames);
+        Line line = lineService.createLine(lineName, stationNames);
+        LineOutputView.printSuccessMessage(CREATE_LINE);
+        return line;
     }
 
     public void deleteLine(String lineName) {
         lineService.deleteLine(lineName);
+        LineOutputView.printSuccessMessage(DELETE_LINE);
     }
 
     public List<Line> getLines() {

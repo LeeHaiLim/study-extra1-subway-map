@@ -1,7 +1,11 @@
 package subway.ui.output;
 
+import subway.domain.line.LineFunction;
+
 import java.util.List;
 
+import static subway.domain.line.LineFunction.CREATE_LINE;
+import static subway.domain.line.LineFunction.DELETE_LINE;
 import static subway.ui.output.OutputView.PRE_FIX;
 
 public class LineOutputView {
@@ -27,8 +31,13 @@ public class LineOutputView {
         printEmptyLine();
     }
 
-    public static void printSuccessMessage() {
-        System.out.println("[INFO] 지하철 노선이 등록되었습니다.");
+    public static void printSuccessMessage(LineFunction lineFunction) {
+        if (lineFunction.equals(CREATE_LINE)) {
+            System.out.println(PRE_FIX + "지하철 노선이 등록되었습니다.");
+        }
+        if (lineFunction.equals(DELETE_LINE)) {
+            System.out.println(PRE_FIX + "지하철 노선이 삭제되었습니다.");
+        }
         printEmptyLine();
     }
 

@@ -55,11 +55,14 @@ public class StationController {
     }
 
     public Station createStation(String stationName) {
-        return stationService.createStation(stationName);
+        Station station = stationService.createStation(stationName);
+        StationOutputView.printSuccessMessage(CREATE_STATION);
+        return station;
     }
 
     public void deleteStation(String stationName) {
         stationService.deleteStation(stationName);
+        StationOutputView.printSuccessMessage(DELETE_STATION);
     }
 
     public List<Station> getStations() {

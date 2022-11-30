@@ -1,5 +1,10 @@
 package subway.ui.output;
 
+import subway.domain.section.SectionFunction;
+
+import static subway.domain.section.SectionFunction.CREATE_SECTION;
+import static subway.ui.output.OutputView.PRE_FIX;
+
 public class SectionOutputView {
     public static void printManagingPage() {
         System.out.println("## 구간 관리 화면");
@@ -13,7 +18,13 @@ public class SectionOutputView {
         System.out.println("## 순서를 입력하세요.");
     }
 
-    public static void printSuccessMessage() {
-        System.out.println("성공하였습니다.");
+    public static void printSuccessMessage(SectionFunction sectionFunction) {
+        if (sectionFunction.equals(CREATE_SECTION)) {
+            System.out.println(PRE_FIX + "구간 등록이 완료되었습니다.");
+        }
+        if (sectionFunction.equals(CREATE_SECTION)) {
+            System.out.println(PRE_FIX + "구간 삭제가 완료되었습니다.");
+        }
+        System.out.println(" ");
     }
 }

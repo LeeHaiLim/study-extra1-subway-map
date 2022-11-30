@@ -52,10 +52,12 @@ public class SectionController {
 
     public void registerSection(String lineName, String stationName, int position) {
         sectionService.registerSection(lineName, stationName, position);
+        SectionOutputView.printSuccessMessage(CREATE_SECTION);
     }
 
     public void deleteSection(String lineName, String stationName) {
         sectionService.deleteSection(lineName, stationName);
+        SectionOutputView.printSuccessMessage(DELETE_SECTION);
     }
 
     private int getPosition() {
