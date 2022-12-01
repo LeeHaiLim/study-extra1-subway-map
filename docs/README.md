@@ -48,8 +48,8 @@ SECTION_ADD, SECTION_DELETE, BACK
 - [x] 이름을 받아 역 객체를 생성하여 반환하는 기능 -> of
 
 ### 지하철 노선 -> Line
-- [ ] 노선 이름을 받아 노선 객체를 생성하여 반환하는 기능 -> of
-- [ ] 상행 종점역과 하행 종점역으로 초기화 하는 기능 -> initLine
+- [x] 노선 이름을 받아 노선 객체를 생성하여 반환하는 기능 -> of
+- [x] 상행 종점역과 하행 종점역으로 초기화 하는 기능 -> initLine
 - [ ] 지하철 노선의 지정된 순서에 역을 등록하는 기능 - addStationToLineByOrder
   - [ ] 이미 등록되어있는 역인지 확인하는 기능 - validStationDuplicate
   - [ ] 등록 가능한 순서인지 확인하는 기능 - validSectionIndex
