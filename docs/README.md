@@ -56,7 +56,7 @@ SECTION_ADD, SECTION_DELETE, BACK
 - [x] 특정 역이 노선에 속해있는지 확인하는 기능 - isStationBelongToLine
 - [x] 노선에 등록되어있는 역을 삭제하는 기능 - deleteStation
 - [x] 노선에 등록되어있는 역의 개수를 반환하는 기능 - numberOfStationsInLine
-- [ ] 노선에 등록되어있는 역의 이름들을 반환하는 기능 - findStationNamesByLine
+- [x] 노선에 등록되어있는 역의 이름들을 반환하는 기능 - findStationNamesByLine
 
 ### 메인 메뉴 관련 기능 -> MainController
 

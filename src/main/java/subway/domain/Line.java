@@ -55,4 +55,10 @@ public class Line {
     public int numberOfStationsInLine() {
         return this.stations.size();
     }
+    public List<String> findStationNamesByLine() {
+        return stations.stream()
+                .map(Station::getName)
+                .map(StationName::toString)
+                .collect(Collectors.toList());
+    }
 }
