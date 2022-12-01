@@ -26,7 +26,7 @@ public class StationRepository {
         if (isExistsStation(stationName)) {
             throw new IllegalArgumentException("[ERROR] 이미 존재하는 역입니다.");
         }
-        stations.add(Station.of(stationName));
+        stations.add(Station.from(stationName));
     }
 
     public static boolean isExistsStation(StationName stationName) {
@@ -60,12 +60,12 @@ public class StationRepository {
 
     public void init() {
         stations.clear();
-        addStation(StationName.of("교대역"));
-        addStation(StationName.of("강남역"));
-        addStation(StationName.of("역삼역"));
-        addStation(StationName.of("남부터미널역"));
-        addStation(StationName.of("양재역"));
-        addStation(StationName.of("양재시민의숲역"));
-        addStation(StationName.of("매봉역"));
+        addStation(StationName.from("교대역"));
+        addStation(StationName.from("강남역"));
+        addStation(StationName.from("역삼역"));
+        addStation(StationName.from("남부터미널역"));
+        addStation(StationName.from("양재역"));
+        addStation(StationName.from("양재시민의숲역"));
+        addStation(StationName.from("매봉역"));
     }
 }

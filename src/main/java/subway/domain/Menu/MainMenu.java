@@ -28,7 +28,7 @@ public enum MainMenu {
             Collections.unmodifiableMap(Stream.of(values())
                     .collect(Collectors.toMap(MainMenu::getCode, Function.identity())));
 
-    public static MainMenu of(String number) {
+    public static MainMenu from(String number) {
         return Optional.ofNullable(menus.get(number)).orElseThrow(
                 () -> new IllegalArgumentException("[ERROR] 선택할 수 없는 기능입니다."));
     }

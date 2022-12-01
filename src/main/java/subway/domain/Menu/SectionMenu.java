@@ -25,7 +25,7 @@ public enum SectionMenu {
             Collections.unmodifiableMap(Stream.of(values())
                     .collect(Collectors.toMap(SectionMenu::getCode, Function.identity())));
 
-    public static SectionMenu of(String number) {
+    public static SectionMenu from(String number) {
         return Optional.ofNullable(managementMenu.get(number)).orElseThrow(
                 () -> new IllegalArgumentException("[ERROR] 선택할 수 없는 기능입니다."));
     }

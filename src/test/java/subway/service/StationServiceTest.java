@@ -2,12 +2,10 @@ package subway.service;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.*;
-import subway.controller.MainController;
 import subway.domain.StationName;
 import subway.repository.LineRepository;
 import subway.repository.StationRepository;
 
-import java.util.HashMap;
 import java.util.List;
 
 class StationServiceTest {
@@ -24,7 +22,7 @@ class StationServiceTest {
     @DisplayName("역 등록 테스트")
     @Test
     void addStationTest() {
-        stationService.addStation(StationName.of("잠실역"));
+        stationService.addStation(StationName.from("잠실역"));
         List<String> stationNames = stationService.getStationNames();
         Assertions.assertThat(stationNames.contains("잠실역")).isTrue();
     }
@@ -32,7 +30,7 @@ class StationServiceTest {
     @DisplayName("같은 이름의 역은 등록할 수 없습니다.")
     @Test
     void addStationDuplicatedTest() {
-        Assertions.assertThatThrownBy(() -> stationService.addStation(StationName.of("강남역")))
+        Assertions.assertThatThrownBy(() -> stationService.addStation(StationName.from("강남역")))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 이미 존재하는 역입니다.");
     }
@@ -40,8 +38,8 @@ class StationServiceTest {
     @DisplayName("역 삭제 테스트")
     @Test
     void deleteStationTest() {
-        stationService.addStation(StationName.of("잠실역"));
-        stationService.deleteStation(StationName.of("잠실역"));
+        stationService.addStation(StationName.from("잠실역"));
+        stationService.deleteStation(StationName.from("잠실역"));
         List<String> stationNames = stationService.getStationNames();
         Assertions.assertThat(stationNames.contains("잠실역")).isFalse();
     }
@@ -49,7 +47,7 @@ class StationServiceTest {
     @DisplayName("노선에 등록된 역은 삭제될 수 없습니다.")
     @Test
     void deleteStationErrorTest() {
-        Assertions.assertThatThrownBy(()->stationService.deleteStation(StationName.of("강남역")))
+        Assertions.assertThatThrownBy(()->stationService.deleteStation(StationName.from("강남역")))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 노선에 등록된 역은 삭제할 수 없습니다.");
     }

@@ -30,24 +30,24 @@ LINE_ADD, LINE_DELETE, LINE_LIST, BACK
 SECTION_ADD, SECTION_DELETE, BACK
 
 ### 지하철 역 이름 클래스 -> StationName
-- [x] 역 이름을 받아 역 이름 클래스를 반환하는 기능 - of
+- [x] 역 이름을 받아 역 이름 클래스를 반환하는 기능 - from
 - [x] 지하철 역 이름 예외처리 validStationName
   - [x] 지하철 역 이름은 공백이 들어갈 수 없다. - validIncludeBlank
   - [x] 지하철 역 이름은 '역'으로 끝나야 한다. - validSuffixStationName
   - [x] 지하철 역 이름은 2글자 이상이어야 한다. - validStationNameLength
 
 ### 지하철 노선 이름 클래스 -> LineName
-- [x] 노선 이름을 받아 역 이름 클래스를 반환하는 기능 - of
+- [x] 노선 이름을 받아 역 이름 클래스를 반환하는 기능 - from
 - [x] 지하철 역 이름 예외처리 validLineName  
   - [x] 지하철 노선 이름은 공백이 들어갈 수 없다. - validIncludeBlank
   - [x] 지하철 노선 이름은 '역'으로 끝나야 한다. - validSuffixLineName
   - [x] 지하철 노선 이름은 2글자 이상이어야 한다. - validLineNameLength
 
 ### 지하철 역 -> Station
-- [x] 이름을 받아 역 객체를 생성하여 반환하는 기능 -> of
+- [x] 이름을 받아 역 객체를 생성하여 반환하는 기능 -> from
 
 ### 지하철 노선 -> Line
-- [x] 노선 이름을 받아 노선 객체를 생성하여 반환하는 기능 -> of
+- [x] 노선 이름을 받아 노선 객체를 생성하여 반환하는 기능 -> from
 - [x] 상행 종점역과 하행 종점역으로 초기화 하는 기능 -> initLine
 - [x] 지하철 노선의 지정된 순서에 역을 등록하는 기능 - addStationToLineByOrder
   - [x] 이미 등록되어있는 역인지 확인하는 기능 - validStationDuplicate

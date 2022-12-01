@@ -11,7 +11,7 @@ class StationNameTest {
     @ParameterizedTest
     @ValueSource(strings = {"잠실역", "고속터미널역"})
     void stationNameTest(String input) {
-        StationName stationName = StationName.of(input);
+        StationName stationName = StationName.from(input);
         Assertions.assertThat(stationName).extracting("name").isEqualTo(input);
 
     }
@@ -20,7 +20,7 @@ class StationNameTest {
     @ParameterizedTest
     @ValueSource(strings = {"잠실 역"})
     void validBlankTest(String input) {
-        Assertions.assertThatThrownBy(() -> StationName.of(input))
+        Assertions.assertThatThrownBy(() -> StationName.from(input))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 역 이름에는 공백이 들어갈 수 없습니다.");
     }
@@ -29,7 +29,7 @@ class StationNameTest {
     @ParameterizedTest
     @ValueSource(strings = {"잠실"})
     void validSuffixTest(String input) {
-        Assertions.assertThatThrownBy(() -> StationName.of(input))
+        Assertions.assertThatThrownBy(() -> StationName.from(input))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 역 이름은 '역'으로 끝나야 합니다.");
     }
@@ -38,7 +38,7 @@ class StationNameTest {
     @ParameterizedTest
     @ValueSource(strings = {"잠역", "역"})
     void validLengthTest(String input) {
-        Assertions.assertThatThrownBy(() -> StationName.of(input))
+        Assertions.assertThatThrownBy(() -> StationName.from(input))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 역 이름은 두 글자 이상이어야 합니다.");
     }

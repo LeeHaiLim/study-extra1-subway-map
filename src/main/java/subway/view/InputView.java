@@ -18,7 +18,7 @@ public class InputView {
         while (true) {
             try {
                 System.out.println("\n## 원하는 기능을 선택하세요.");
-                return MainMenu.of(scanner.nextLine());
+                return MainMenu.from(scanner.nextLine());
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
@@ -37,7 +37,7 @@ public class InputView {
     public StationMenu readStationMenu() {
         showStationMenu();
         System.out.println("\n## 원하는 기능을 선택하세요.");
-        return StationMenu.of(scanner.nextLine());
+        return StationMenu.from(scanner.nextLine());
     }
 
     private void showStationMenu() {
@@ -51,7 +51,7 @@ public class InputView {
     public LineMenu readLineMenu() {
         showLineMenu();
         System.out.println("\n## 원하는 기능을 선택하세요.");
-        return LineMenu.of(scanner.nextLine());
+        return LineMenu.from(scanner.nextLine());
     }
 
     private void showLineMenu() {
@@ -65,7 +65,7 @@ public class InputView {
     public SectionMenu readSectionMenu() {
         showSectionMenu();
         System.out.println("\n## 원하는 기능을 선택하세요.");
-        return SectionMenu.of(scanner.nextLine());
+        return SectionMenu.from(scanner.nextLine());
     }
 
     private void showSectionMenu() {
@@ -76,14 +76,14 @@ public class InputView {
     }
 
     public StationName readStationName() {
-        return StationName.of(scanner.nextLine());
+        return StationName.from(scanner.nextLine());
     }
 
     public LineName readLineName() {
-        return LineName.of(scanner.nextLine());
+        return LineName.from(scanner.nextLine());
     }
 
     public Order readSectionOrder() {
-        return Order.of(scanner.nextLine());
+        return Order.from(scanner.nextLine());
     }
 }

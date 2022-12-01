@@ -2,13 +2,11 @@ package subway.service;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.*;
-import subway.controller.MainController;
 import subway.domain.LineName;
 import subway.domain.StationName;
 import subway.repository.LineRepository;
 import subway.repository.StationRepository;
 
-import java.util.HashMap;
 import java.util.List;
 
 class LineServiceTest {
@@ -25,7 +23,7 @@ class LineServiceTest {
     @DisplayName("노선 등록 테스트")
     @Test
     void addLineTest() {
-        lineService.addLine(LineName.of("1호선"), StationName.of("강남역"), StationName.of("잠실역"));
+        lineService.addLine(LineName.from("1호선"), StationName.from("강남역"), StationName.from("잠실역"));
         List<String> lineNames = lineService.getLineNames();
         Assertions.assertThat(lineNames.contains("1호선")).isTrue();
     }
@@ -34,7 +32,7 @@ class LineServiceTest {
     @Test
     void addLineDuplicatedTest() {
         Assertions.assertThatThrownBy(() ->
-                        lineService.addLine(LineName.of("2호선"), StationName.of("교대역"), StationName.of("양재시민의숲역")))
+                        lineService.addLine(LineName.from("2호선"), StationName.from("교대역"), StationName.from("양재시민의숲역")))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 이미 존재하는 노선입니다.");
     }
@@ -42,8 +40,8 @@ class LineServiceTest {
     @DisplayName("노선 삭제 테스트")
     @Test
     void deleteLine() {
-        lineService.addLine(LineName.of("1호선"), StationName.of("강남역"), StationName.of("잠실역"));
-        lineService.deleteLine(LineName.of("1호선"));
+        lineService.addLine(LineName.from("1호선"), StationName.from("강남역"), StationName.from("잠실역"));
+        lineService.deleteLine(LineName.from("1호선"));
         List<String> lineNames = lineService.getLineNames();
         Assertions.assertThat(lineNames.contains("1호선")).isFalse();
     }

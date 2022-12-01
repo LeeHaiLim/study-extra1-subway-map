@@ -12,7 +12,7 @@ public class Line {
         this.name = name;
     }
 
-    public static Line of(LineName name) {
+    public static Line from(LineName name) {
         Line line = new Line(name);
         return line;
     }

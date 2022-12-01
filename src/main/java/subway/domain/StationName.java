@@ -13,7 +13,7 @@ public class StationName {
         this.name = name;
     }
 
-    public static StationName of(String name) {
+    public static StationName from(String name) {
         return new StationName(name);
     }
 

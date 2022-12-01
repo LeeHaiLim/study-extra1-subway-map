@@ -27,7 +27,7 @@ public enum LineMenu {
             Collections.unmodifiableMap(Stream.of(values())
                     .collect(Collectors.toMap(LineMenu::getCode, Function.identity())));
 
-    public static LineMenu of(String number) {
+    public static LineMenu from(String number) {
         return Optional.ofNullable(menus.get(number)).orElseThrow(
                 () -> new IllegalArgumentException("[ERROR] 선택할 수 없는 기능입니다."));
     }

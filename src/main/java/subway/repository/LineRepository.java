@@ -26,7 +26,7 @@ public class LineRepository {
         if (isExistsLine(lineName)) {
             throw new IllegalArgumentException("[ERROR] 이미 존재하는 노선입니다.");
         }
-        lines.add(Line.of(lineName));
+        lines.add(Line.from(lineName));
     }
 
     public static boolean isExistsLine(LineName lineName) {
@@ -72,30 +72,30 @@ public class LineRepository {
     }
 
     private void initLine2() {
-        addLine(LineName.of("2호선"));
-        Line line = findLineByName(LineName.of("2호선"));
-        line.addStationToLine(Station.of(StationName.of("교대역")));
-        line.addStationToLine(Station.of(StationName.of("강남역")));
-        line.addStationToLine(Station.of(StationName.of("역삼역")));
+        addLine(LineName.from("2호선"));
+        Line line = findLineByName(LineName.from("2호선"));
+        line.addStationToLine(Station.from(StationName.from("교대역")));
+        line.addStationToLine(Station.from(StationName.from("강남역")));
+        line.addStationToLine(Station.from(StationName.from("역삼역")));
         lines.add(line);
     }
 
     private void initLine3() {
-        addLine(LineName.of("3호선"));
-        Line line = findLineByName(LineName.of("3호선"));
-        line.addStationToLine(Station.of(StationName.of("교대역")));
-        line.addStationToLine(Station.of(StationName.of("남부터미널역")));
-        line.addStationToLine(Station.of(StationName.of("양재역")));
-        line.addStationToLine(Station.of(StationName.of("매봉역")));
+        addLine(LineName.from("3호선"));
+        Line line = findLineByName(LineName.from("3호선"));
+        line.addStationToLine(Station.from(StationName.from("교대역")));
+        line.addStationToLine(Station.from(StationName.from("남부터미널역")));
+        line.addStationToLine(Station.from(StationName.from("양재역")));
+        line.addStationToLine(Station.from(StationName.from("매봉역")));
         lines.add(line);
     }
 
     private void initLineBundang() {
-        addLine(LineName.of("신분당선"));
-        Line line = findLineByName(LineName.of("신분당선"));
-        line.addStationToLine(Station.of(StationName.of("강남역")));
-        line.addStationToLine(Station.of(StationName.of("양재역")));
-        line.addStationToLine(Station.of(StationName.of("양재시민의숲역")));
+        addLine(LineName.from("신분당선"));
+        Line line = findLineByName(LineName.from("신분당선"));
+        line.addStationToLine(Station.from(StationName.from("강남역")));
+        line.addStationToLine(Station.from(StationName.from("양재역")));
+        line.addStationToLine(Station.from(StationName.from("양재시민의숲역")));
         lines.add(line);
     }
 }

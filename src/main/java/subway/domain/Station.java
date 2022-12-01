@@ -9,7 +9,7 @@ public class Station {
         this.name = name;
     }
 
-    public static Station of(StationName name) {
+    public static Station from(StationName name) {
         return new Station(name);
     }
 

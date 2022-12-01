@@ -11,7 +11,7 @@ class LineNameTest {
     @ParameterizedTest
     @ValueSource(strings = {"1호선", "수인분당선"})
     void stationNameTest(String input) {
-        LineName lineName = LineName.of(input);
+        LineName lineName = LineName.from(input);
         Assertions.assertThat(lineName).extracting("name").isEqualTo(input);
 
     }
@@ -20,7 +20,7 @@ class LineNameTest {
     @ParameterizedTest
     @ValueSource(strings = {"수인 분당선"})
     void validBlankTest(String input) {
-        Assertions.assertThatThrownBy(() -> LineName.of(input))
+        Assertions.assertThatThrownBy(() -> LineName.from(input))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 노선 이름에는 공백이 들어갈 수 없습니다.");
     }
@@ -29,7 +29,7 @@ class LineNameTest {
     @ParameterizedTest
     @ValueSource(strings = {"1호"})
     void validSuffixTest(String input) {
-        Assertions.assertThatThrownBy(() -> LineName.of(input))
+        Assertions.assertThatThrownBy(() -> LineName.from(input))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 노선 이름은 '선'으로 끝나야 합니다.");
     }
@@ -38,7 +38,7 @@ class LineNameTest {
     @ParameterizedTest
     @ValueSource(strings = {"호선", "선"})
     void validLengthTest(String input) {
-        Assertions.assertThatThrownBy(() -> LineName.of(input))
+        Assertions.assertThatThrownBy(() -> LineName.from(input))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 노선 이름은 두 글자 이상이어야 합니다.");
     }

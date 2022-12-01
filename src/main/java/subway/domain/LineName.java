@@ -13,7 +13,7 @@ public class LineName {
         this.name = name;
     }
 
-    public static LineName of(String name) {
+    public static LineName from(String name) {
         return new LineName(name);
     }
 

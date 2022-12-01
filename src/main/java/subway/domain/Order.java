@@ -11,7 +11,7 @@ public class Order {
         this.order = Integer.parseInt(order) - INDEX_RESET;
     }
 
-    public static Order of(String order) {
+    public static Order from(String order) {
         return new Order(order);
     }
 
