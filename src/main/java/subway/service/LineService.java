@@ -18,4 +18,9 @@ public class LineService {
         Station lastStation = stationRepository.findStationByName(lastStationName);
         lineRepository.addLine(lineName, firstStation, lastStation);
     }
+
+    public void deleteLine(LineName lineName) {
+        Line line = lineRepository.findLineByName(lineName);
+        lineRepository.deleteLine(line);
+    }
 }
