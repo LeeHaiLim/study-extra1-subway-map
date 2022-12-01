@@ -18,7 +18,7 @@ public class SectionService {
 
     private void validStationBelongToLine(Station station) {
         if (lineRepository.isStationBelongToLine(station)) {
-            throw new IllegalArgumentException("[ERROR] 이미 다른 노선에 속해있는 역입니다.");
+            throw new IllegalArgumentException("[ERROR] 이미 노선에 속해있는 역입니다.");
         }
     }
 

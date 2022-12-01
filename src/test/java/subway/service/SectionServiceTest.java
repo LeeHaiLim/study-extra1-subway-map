@@ -38,7 +38,7 @@ class SectionServiceTest {
     void addSectionDuplicatedTest() {
         Assertions.assertThatThrownBy(() -> sectionService.addSection(LineName.of("2호선"), StationName.of("교대역"), Order.of("2")))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("[ERROR] 이미 속해있는 역입니다.");
+                .hasMessage("[ERROR] 이미 노선에 속해있는 역입니다.");
     }
 
     @DisplayName("구간 삭제 테스트")
