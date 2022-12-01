@@ -56,4 +56,9 @@ public class LineName {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
