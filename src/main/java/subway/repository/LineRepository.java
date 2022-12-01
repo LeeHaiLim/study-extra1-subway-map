@@ -1,9 +1,6 @@
 package subway.repository;
 
-import subway.domain.Line;
-import subway.domain.LineName;
-import subway.domain.Station;
-import subway.domain.StationName;
+import subway.domain.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -78,15 +75,15 @@ public class LineRepository {
         Line line = Line.of(LineName.of("2호선"),
                 Station.of(StationName.of("교대역")),
                 Station.of(StationName.of("역삼역")));
-        line.addStationToLineByOrder(2, Station.of(StationName.of("강남역")));
+        line.addStationToLineByOrder(Order.of("2"), Station.of(StationName.of("강남역")));
     }
 
     private void initLine3() {
         Line line3 = Line.of(LineName.of("3호선"),
                 Station.of(StationName.of("교대역")),
                 Station.of(StationName.of("매봉역")));
-        line3.addStationToLineByOrder(2, Station.of(StationName.of("남부터미널역")));
-        line3.addStationToLineByOrder(3, Station.of(StationName.of("양재역")));
+        line3.addStationToLineByOrder(Order.of("2"), Station.of(StationName.of("남부터미널역")));
+        line3.addStationToLineByOrder(Order.of("3"), Station.of(StationName.of("양재역")));
         lines.add(line3);
     }
 
@@ -94,7 +91,7 @@ public class LineRepository {
         Line line = Line.of(LineName.of("신분당선"),
                 Station.of(StationName.of("강남역")),
                 Station.of(StationName.of("양재시민의숲역")));
-        line.addStationToLineByOrder(2, Station.of(StationName.of("양재역")));
+        line.addStationToLineByOrder(Order.of("2"), Station.of(StationName.of("양재역")));
         lines.add(line);
     }
 }

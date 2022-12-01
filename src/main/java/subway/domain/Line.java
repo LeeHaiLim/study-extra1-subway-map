@@ -23,7 +23,8 @@ public class Line {
         stations.add(lastStation);
     }
 
-    public void addStationToLineByOrder(int index, Station station) {
+    public void addStationToLineByOrder(Order order, Station station) {
+        int index = order.getOrder();
         validStationDuplicate(station);
         validSectionIndex(index);
         stations.add(index, station);
