@@ -94,12 +94,12 @@ SECTION_ADD, SECTION_DELETE, BACK
 - [ ] 지하철 노선에 2개 이상의 역이 있는지 확인하는 기능 - checkLineContainOverTwoStation
 
 ### 지하철 역 저장소 -> StationRepository
-- [ ] 지하철 역 저장소에 등록하는 기능 - addStation
-  - [ ] 존재하는 역인지 확인하는 기능 - isExistsStation
-- [ ] 지하철 역을 저장소에서 삭제하는 기능 - deleteStation
-- [ ] 등록된 역 리스트를 반환하는 기능 - getStationsName
-- [ ] 역 이름으로 역 객체를 찾아 반환하는 기능 - findStationByName
-- [ ] 초기 데이터로 세팅 - init
+- [x] 지하철 역 저장소에 등록하는 기능 - addStation
+  - [x] 존재하는 역인지 확인하는 기능 - isExistsStation
+- [x] 지하철 역을 저장소에서 삭제하는 기능 - deleteStation
+- [x] 등록된 역 리스트를 반환하는 기능 - getStationsName
+- [x] 역 이름으로 역 객체를 찾아 반환하는 기능 - findStationByName
+- [x] 초기 데이터로 세팅 - init
 
 ### 지하철 노선의 저장소 -> LineRepository
 - [ ] 지하철 노선 저장소에 등록하는 기능 - addLine
