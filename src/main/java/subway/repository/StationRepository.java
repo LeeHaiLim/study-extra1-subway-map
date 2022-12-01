@@ -4,29 +4,36 @@ import subway.domain.Station;
 import subway.domain.StationName;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class StationRepository {
+    private static StationRepository stationRepository;
     private static final List<Station> stations = new ArrayList<>();
 
-    public static List<Station> stations() {
-        return Collections.unmodifiableList(stations);
+    private StationRepository() {
+        init();
     }
 
-    public static void addStation(Station station) {
-        if (isExistsStation(station)) {
+    public static StationRepository getInstance() {
+        if (stationRepository == null) {
+            stationRepository = new StationRepository();
+        }
+        return stationRepository;
+    }
+
+    public static void addStation(StationName stationName) {
+        if (isExistsStation(stationName)) {
             throw new IllegalArgumentException("[ERROR] 이미 존재하는 역입니다.");
         }
-        stations.add(station);
+        stations.add(Station.of(stationName));
     }
 
-    public static boolean isExistsStation(Station station) {
-        if (stations.contains(station)) {
-            return true;
-        }
-        return false;
+    public static boolean isExistsStation(StationName stationName) {
+        return stations.stream()
+                .anyMatch(station -> station.getName().equals(stationName));
+    }
+
     public static void deleteStation(Station station) {
         stations.remove(station);
     }
