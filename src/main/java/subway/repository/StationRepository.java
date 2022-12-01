@@ -37,6 +37,11 @@ public class StationRepository {
     public static void deleteStation(Station station) {
         stations.remove(station);
     }
+
+    public static Station findStationByName(StationName stationName) {
+        return stations.stream().filter(station -> station.getName().equals(stationName))
+                .findAny()
+                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 존재하지 않는 역입니다."));
     }
 
     }
