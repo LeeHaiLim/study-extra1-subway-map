@@ -23,4 +23,8 @@ public class LineService {
         Line line = lineRepository.findLineByName(lineName);
         lineRepository.deleteLine(line);
     }
+
+    public List<String> getLineNames() {
+        return lineRepository.getLineNames();
+    }
 }
