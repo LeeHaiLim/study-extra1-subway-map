@@ -14,9 +14,22 @@ public class LineService {
     private final LineRepository lineRepository = LineRepository.getInstance();
 
     public void addLine(LineName lineName, StationName firstStationName, StationName lastStationName) {
+        lineRepository.addLine(lineName);
+        Line line = lineRepository.findLineByName(lineName);
+        addStationToLine(line, firstStationName, lastStationName);
+    }
+
+    private void addStationToLine(Line line, StationName firstStationName, StationName lastStationName) {
+        validFirstAndLastStation(firstStationName, lastStationName);
         Station firstStation = stationRepository.findOrMakeStation(firstStationName);
         Station lastStation = stationRepository.findOrMakeStation(lastStationName);
-        lineRepository.addLine(lineName, firstStation, lastStation);
+        line.addStationToLine(firstStation);
+        line.addStationToLine(lastStation);
+    }
+    private void validFirstAndLastStation(StationName firstStationName, StationName lastStationName) {
+        if (firstStationName.equals(lastStationName)) {
+            throw new IllegalArgumentException("[ERROR] 상행 종점 역과 하행 종점 역은 같을 수 없습니다.");
+        }
     }
 
     public void deleteLine(LineName lineName) {

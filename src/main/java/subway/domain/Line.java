@@ -12,15 +12,14 @@ public class Line {
         this.name = name;
     }
 
-    public static Line of(LineName name, Station firstStation, Station lastStation) {
+    public static Line of(LineName name) {
         Line line = new Line(name);
-        line.initLine(firstStation, lastStation);
         return line;
     }
 
-    private void initLine(Station firstStation, Station lastStation) {
-        stations.add(firstStation);
-        stations.add(lastStation);
+    public void addStationToLine(Station station) {
+        validStationDuplicate(station);
+        stations.add(station);
     }
 
     public void addStationToLineByOrder(Order order, Station station) {
