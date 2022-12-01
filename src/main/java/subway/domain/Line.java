@@ -51,4 +51,8 @@ public class Line {
             throw new IllegalArgumentException("[ERROR] 해당 노선에 존재하지 않는 역입니다.");
         }
     }
+
+    public int numberOfStationsInLine() {
+        return this.stations.size();
+    }
 }
