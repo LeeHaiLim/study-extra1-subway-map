@@ -34,6 +34,14 @@ class SectionServiceTest {
         Assertions.assertThat(subwayMap.get("2호선").indexOf("잠실역")).isEqualTo(1);
     }
 
+    @DisplayName("중복된 구간을 등록할 수 없습니다.")
+    @Test
+    void addSectionDuplicatedTest() {
+        Assertions.assertThatThrownBy(() -> sectionService.addSection(LineName.of("2호선"), StationName.of("교대역"), Order.of("2")))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("[ERROR] 이미 속해있는 역입니다.");
+    }
+
     @DisplayName("구간 삭제 테스트")
     @Test
     void deleteSectionTest() {
