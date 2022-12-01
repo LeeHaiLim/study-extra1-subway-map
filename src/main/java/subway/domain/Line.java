@@ -45,4 +45,10 @@ public class Line {
         return stations.stream()
                 .anyMatch(station -> station.equals(findStation));
     }
+
+    public void deleteStation(Station deleteStation) {
+        if (!stations.removeIf(station -> station.equals(deleteStation))) {
+            throw new IllegalArgumentException("[ERROR] 해당 노선에 존재하지 않는 역입니다.");
+        }
+    }
 }
