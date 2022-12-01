@@ -12,8 +12,10 @@ class LineTest {
     @Test
     void createLine() {
         Station 강남역 = Station.of(StationName.of("강남역"));
-        Station 양재시민의숲역 = Station.of(StationName.of("양재시민의숲역"));
-        Line line = Line.of(LineName.of("신분당선"), 강남역, 양재시민의숲역);
-        Assertions.assertThat(line).extracting("stations").isEqualTo(List.of(강남역, 양재시민의숲역));
+        Station 잠실역 = Station.of(StationName.of("잠실역"));
+        Line line = Line.of(LineName.of("1호선"));
+        line.addStationToLine(강남역);
+        line.addStationToLine(잠실역);
+        Assertions.assertThat(line).extracting("stations").isEqualTo(List.of(강남역, 잠실역));
     }
 }
