@@ -2,6 +2,7 @@ package subway.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Line {
     private LineName name;
@@ -38,5 +39,10 @@ public class Line {
         if (index > stations.size()) {
             throw new IllegalArgumentException("[ERROR] 올바른 순서를 입력해주세요.");
         }
+    }
+
+    public boolean isStationBelongToLine(Station findStation) {
+        return stations.stream()
+                .anyMatch(station -> station.equals(findStation));
     }
 }

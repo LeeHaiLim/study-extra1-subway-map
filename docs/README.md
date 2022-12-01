@@ -53,7 +53,7 @@ SECTION_ADD, SECTION_DELETE, BACK
 - [x] 지하철 노선의 지정된 순서에 역을 등록하는 기능 - addStationToLineByOrder
   - [x] 이미 등록되어있는 역인지 확인하는 기능 - validStationDuplicate
   - [x] 등록 가능한 순서인지 확인하는 기능 - validSectionIndex
-- [ ] 특정 역이 노선에 속해있는지 확인하는 기능 - isStationBelongToLine
+- [x] 특정 역이 노선에 속해있는지 확인하는 기능 - isStationBelongToLine
 - [ ] 노선에 등록되어있는 역을 삭제하는 기능 - deleteStation
 - [ ] 노선에 등록되어있는 역의 개수를 반환하는 기능 - numberOfStationsInLine
 - [ ] 노선에 등록되어있는 역의 이름들을 반환하는 기능 - findStationNamesByLine
