@@ -17,13 +17,15 @@ public class StationController implements SubwayController {
 
     @Override
     public void start() {
-        while (true) {
+        boolean isContinue = true;
+        while (isContinue) {
             try {
                 StationMenu stationMenu = inputView.readStationMenu();
                 if (stationMenu == BACK) {
                     break;
                 }
                 findMenu(stationMenu);
+                isContinue = false;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }

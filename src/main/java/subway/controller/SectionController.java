@@ -18,13 +18,15 @@ public class SectionController implements SubwayController {
 
     @Override
     public void start() {
-        while (true) {
+        boolean isContinue = true;
+        while (isContinue) {
             try {
                 SectionMenu sectionMenu = inputView.readSectionMenu();
                 if (sectionMenu == BACK) {
                     break;
                 }
                 findMenu(sectionMenu);
+                isContinue = false;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }

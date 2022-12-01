@@ -19,13 +19,15 @@ public class LineController implements SubwayController {
 
     @Override
     public void start() {
-        while (true) {
+        boolean isContinue = true;
+        while (isContinue) {
             try {
                 LineMenu number = inputView.readLineMenu();
                 if (number == BACK) {
                     break;
                 }
                 findMenu(number);
+                isContinue = false;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }

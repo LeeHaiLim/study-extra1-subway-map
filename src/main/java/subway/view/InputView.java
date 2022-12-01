@@ -36,14 +36,8 @@ public class InputView {
 
     public StationMenu readStationMenu() {
         showStationMenu();
-        while (true) {
-            try {
-                System.out.println("\n## 원하는 기능을 선택하세요.");
-                return StationMenu.of(scanner.nextLine());
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-            }
-        }
+        System.out.println("\n## 원하는 기능을 선택하세요.");
+        return StationMenu.of(scanner.nextLine());
     }
 
     private void showStationMenu() {
@@ -56,14 +50,8 @@ public class InputView {
 
     public LineMenu readLineMenu() {
         showLineMenu();
-        while (true) {
-            try {
-                System.out.println("\n## 원하는 기능을 선택하세요.");
-                return LineMenu.of(scanner.nextLine());
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-            }
-        }
+        System.out.println("\n## 원하는 기능을 선택하세요.");
+        return LineMenu.of(scanner.nextLine());
     }
 
     private void showLineMenu() {
@@ -76,14 +64,8 @@ public class InputView {
 
     public SectionMenu readSectionMenu() {
         showSectionMenu();
-        while (true) {
-            try {
-                System.out.println("\n## 원하는 기능을 선택하세요.");
-                return SectionMenu.of(scanner.nextLine());
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-            }
-        }
+        System.out.println("\n## 원하는 기능을 선택하세요.");
+        return SectionMenu.of(scanner.nextLine());
     }
 
     private void showSectionMenu() {
