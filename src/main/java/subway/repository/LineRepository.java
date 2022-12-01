@@ -76,15 +76,16 @@ public class LineRepository {
                 Station.of(StationName.of("교대역")),
                 Station.of(StationName.of("역삼역")));
         line.addStationToLineByOrder(Order.of("2"), Station.of(StationName.of("강남역")));
+        lines.add(line);
     }
 
     private void initLine3() {
-        Line line3 = Line.of(LineName.of("3호선"),
+        Line line = Line.of(LineName.of("3호선"),
                 Station.of(StationName.of("교대역")),
                 Station.of(StationName.of("매봉역")));
-        line3.addStationToLineByOrder(Order.of("2"), Station.of(StationName.of("남부터미널역")));
-        line3.addStationToLineByOrder(Order.of("3"), Station.of(StationName.of("양재역")));
-        lines.add(line3);
+        line.addStationToLineByOrder(Order.of("2"), Station.of(StationName.of("남부터미널역")));
+        line.addStationToLineByOrder(Order.of("3"), Station.of(StationName.of("양재역")));
+        lines.add(line);
     }
 
     private void initLineBundang() {
