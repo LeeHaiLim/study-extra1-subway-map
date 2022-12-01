@@ -2,36 +2,44 @@ package subway.repository;
 
 import subway.domain.Line;
 import subway.domain.LineName;
+import subway.domain.Station;
+import subway.domain.StationName;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class LineRepository {
+    private static LineRepository lineRepository;
     private static final List<Line> lines = new ArrayList<>();
 
-    public static List<Line> lines() {
-        return Collections.unmodifiableList(lines);
+    private LineRepository() {
+        init();
     }
 
-    public static void addLine(Line line) {
-        if (isExistsLine(line)) {
+    public static LineRepository getInstance() {
+        if (lineRepository == null) {
+            lineRepository = new LineRepository();
+        }
+        return lineRepository;
+    }
+
+    public static void addLine(LineName lineName, Station firstStation, Station lastStation) {
+        if (isExistsLine(lineName)) {
             throw new IllegalArgumentException("[ERROR] 이미 존재하는 노선입니다.");
         }
-        lines.add(line);
+        lines.add(Line.of(lineName, firstStation, lastStation));
     }
 
-    public static boolean isExistsLine(Line line) {
-        if (lines.contains(line)) {
-            return true;
-        }
-        return false;
+    public static boolean isExistsLine(LineName lineName) {
+        return lines.stream()
+                .anyMatch(line -> line.getName().equals(lineName));
     }
 
-    public static void deleteLineByName(LineName name) {
-        if (!(lines.removeIf(line -> Objects.equals(line.getName(), name)))) {
-            throw new IllegalArgumentException("[ERROR] 존재하지 않는 노선입니다.");
-        }
+    public static void deleteLine(Line line) {
+        lines.remove(line);
+    }
+
     }
 }
