@@ -1,11 +1,9 @@
 package subway.domain;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 public class Station {
-    private StationName name;
-    private List<Line> linesBelongTo = new ArrayList<>();
+    private final StationName name;
 
     private Station(StationName name) {
         this.name = name;
@@ -19,14 +17,19 @@ public class Station {
         return name;
     }
 
-    public void addLineBelongToStation(Line line) {
-        validLineDuplicate(line);
-        linesBelongTo.add(line);
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 
-    private void validLineDuplicate(Line line) {
-        if (linesBelongTo.contains(line)) {
-            throw new IllegalArgumentException("[ERROR] 이미 속해있는 노선입니다.");
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Station)) {
+            return false;
         }
+        if (this.getName().equals(((Station) obj).getName())) {
+            return true;
+        }
+        return false;
     }
 }
