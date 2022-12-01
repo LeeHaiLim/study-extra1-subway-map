@@ -41,5 +41,9 @@ public class LineRepository {
         lines.remove(line);
     }
 
+    public static boolean isStationBelongToLine(Station station) {
+        return lines.stream()
+                .anyMatch(line -> line.isStationBelongToLine(station));
+    }
     }
 }
