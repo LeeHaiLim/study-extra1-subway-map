@@ -13,10 +13,9 @@
 - [x] 지하철 구간 순서를 입력받는 기능 - readSectionOrder
 
 ### 출력 클래스 -> OutputView
-#### 메인 화면 관련 기능
-- [ ] 역 목록 출력 - printStations
-- [ ] 노선 목록 출력 - printLines
-- [ ] 지하철 노선도 출력 - printSubwayMap
+- [x] 역 목록 출력 - printStations
+- [x] 노선 목록 출력 - printLines
+- [x] 지하철 노선도 출력 - printSubwayMap
 
 ### 메인 관리 enum -> MainMenu
 STATION_MANAGEMENT, LINE_MANAGEMENT, SECTION_MANAGEMENT, QUIT
