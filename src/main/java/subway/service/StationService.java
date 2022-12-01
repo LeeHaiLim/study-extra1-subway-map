@@ -22,4 +22,8 @@ public class StationService {
         }
         stationRepository.deleteStation(station);
     }
+
+    public List<String> getStationNames() {
+        return stationRepository.getStationsName();
+    }
 }
