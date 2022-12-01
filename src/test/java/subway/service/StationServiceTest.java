@@ -32,8 +32,7 @@ class StationServiceTest {
     @DisplayName("같은 이름의 역은 등록할 수 없습니다.")
     @Test
     void addStationDuplicatedTest() {
-        stationService.addStation(StationName.of("잠실역"));
-        Assertions.assertThatThrownBy(() -> stationService.addStation(StationName.of("잠실역")))
+        Assertions.assertThatThrownBy(() -> stationService.addStation(StationName.of("강남역")))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("[ERROR] 이미 존재하는 역입니다.");
     }
