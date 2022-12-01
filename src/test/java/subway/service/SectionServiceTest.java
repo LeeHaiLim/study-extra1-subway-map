@@ -33,6 +33,15 @@ class SectionServiceTest {
         Assertions.assertThat(subwayMap.get("2호선").indexOf("잠실역")).isEqualTo(1);
     }
 
+    @DisplayName("구간 등록 테스트 - 이미 생성되어 있는 역")
+    @Test
+    void addSectionTest2() {
+        stationService.addStation(StationName.of("잠실역"));
+        sectionService.addSection(LineName.of("2호선"), StationName.of("잠실역"), Order.of("2"));
+        HashMap<String, List<String>> subwayMap = lineRepository.getSubwayMap();
+        Assertions.assertThat(subwayMap.get("2호선").indexOf("잠실역")).isEqualTo(1);
+    }
+
     @DisplayName("중복된 구간을 등록할 수 없습니다.")
     @Test
     void addSectionDuplicatedTest() {
