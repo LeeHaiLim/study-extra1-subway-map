@@ -93,9 +93,9 @@ SECTION_ADD, SECTION_DELETE, BACK
 - [x] 지하철 노선의 리스트를 조회하는 기능 -getLineNames
 
 #### 구간 관리 관련 기능 -> SectionService
-- [ ] 지하철 구간을 등록하는 기능 addSection
-- [ ] 지하철 구간을 삭제하는 기능 - deleteSection
-- [ ] 지하철 노선에 2개 이상의 역이 있는지 확인하는 기능 - checkLineContainOverTwoStation
+- [x] 지하철 구간을 등록하는 기능 addSection
+- [x] 지하철 구간을 삭제하는 기능 - deleteSection
+  - [x] 지하철 노선에 2개 이상의 역이 있는지 확인하는 기능 - checkLineContainOverTwoStation
 
 ### 지하철 역 저장소 -> StationRepository
 - [x] 지하철 역 저장소에 등록하는 기능 - addStation
