@@ -38,6 +38,13 @@ public class StationRepository {
         stations.remove(station);
     }
 
+    public static List<String> getStationsName() {
+        return stations.stream()
+                .map(Station::getName)
+                .map(StationName::toString)
+                .collect(Collectors.toUnmodifiableList());
+    }
+
     public static Station findStationByName(StationName stationName) {
         return stations.stream().filter(station -> station.getName().equals(stationName))
                 .findAny()
