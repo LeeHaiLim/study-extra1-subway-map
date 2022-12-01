@@ -11,7 +11,7 @@ public class SectionService {
 
     public void addSection(LineName lineName, StationName stationName, Order order) {
         Line line = lineRepository.findLineByName(lineName);
-        Station station = stationRepository.findStationByName(stationName);
+        Station station = stationRepository.findOrMakeStation(stationName);
         line.addStationToLineByOrder(order, station);
     }
 
