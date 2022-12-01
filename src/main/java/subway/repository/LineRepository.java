@@ -60,5 +60,11 @@ public class LineRepository {
                         line.findStationNamesByLine()));
         return subwayMap;
     }
+
+    public static Line findLineByName(LineName lineName) {
+        return lines.stream().filter(line -> line.getName().equals(lineName))
+                .findAny()
+                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 존재하지 않는 노선입니다."));
+    }
     }
 }
