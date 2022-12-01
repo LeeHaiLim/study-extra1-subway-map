@@ -66,5 +66,35 @@ public class LineRepository {
                 .findAny()
                 .orElseThrow(() -> new IllegalArgumentException("[ERROR] 존재하지 않는 노선입니다."));
     }
+
+    public void init() {
+        lines.clear();
+        initLine2();
+        initLine3();
+        initLineBundang();
+    }
+
+    private void initLine2() {
+        Line line = Line.of(LineName.of("2호선"),
+                Station.of(StationName.of("교대역")),
+                Station.of(StationName.of("역삼역")));
+        line.addStationToLineByOrder(2, Station.of(StationName.of("강남역")));
+    }
+
+    private void initLine3() {
+        Line line3 = Line.of(LineName.of("3호선"),
+                Station.of(StationName.of("교대역")),
+                Station.of(StationName.of("매봉역")));
+        line3.addStationToLineByOrder(2, Station.of(StationName.of("남부터미널역")));
+        line3.addStationToLineByOrder(3, Station.of(StationName.of("양재역")));
+        lines.add(line3);
+    }
+
+    private void initLineBundang() {
+        Line line = Line.of(LineName.of("신분당선"),
+                Station.of(StationName.of("강남역")),
+                Station.of(StationName.of("양재시민의숲역")));
+        line.addStationToLineByOrder(2, Station.of(StationName.of("양재역")));
+        lines.add(line);
     }
 }
