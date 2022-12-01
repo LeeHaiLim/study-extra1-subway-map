@@ -4,13 +4,13 @@
 ## 구현할 기능 목록
 
 ### 사용자 입력 클래스 -> InputView
-- [ ] 메인 화면 번호를 입력받는 기능 - readMainMenu
-- [ ] 역 관리 화면 번호를 입력받는 기능 - readStationMenu
-- [ ] 노선 관리 화면 번호를 입력받는 기능 - readLineMenu
-- [ ] 구간 관리 화면 번호를 입력받는 기능 - readSectionMenu
-- [ ] 지하철 역 이름을 입력받는 기능 - readStationName
-- [ ] 지하철 노선의 이름을 입력받는 기능 - readLineName
-- [ ] 지하철 구간 순서를 입력받는 기능 - readSectionOrder
+- [x] 메인 화면 번호를 입력받는 기능 - readMainMenu
+- [x] 역 관리 화면 번호를 입력받는 기능 - readStationMenu
+- [x] 노선 관리 화면 번호를 입력받는 기능 - readLineMenu
+- [x] 구간 관리 화면 번호를 입력받는 기능 - readSectionMenu
+- [x] 지하철 역 이름을 입력받는 기능 - readStationName
+- [x] 지하철 노선의 이름을 입력받는 기능 - readLineName
+- [x] 지하철 구간 순서를 입력받는 기능 - readSectionOrder
 
 ### 출력 클래스 -> OutputView
 #### 메인 화면 관련 기능
