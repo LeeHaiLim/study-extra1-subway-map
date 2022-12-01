@@ -14,16 +14,9 @@ public class LineService {
     private final LineRepository lineRepository = LineRepository.getInstance();
 
     public void addLine(LineName lineName, StationName firstStationName, StationName lastStationName) {
-        Station firstStation = findOrMakeStation(firstStationName);
-        Station lastStation = findOrMakeStation(lastStationName);
+        Station firstStation = stationRepository.findOrMakeStation(firstStationName);
+        Station lastStation = stationRepository.findOrMakeStation(lastStationName);
         lineRepository.addLine(lineName, firstStation, lastStation);
-    }
-
-    private Station findOrMakeStation(StationName stationName) {
-        if (!stationRepository.isExistsStation(stationName)) {
-            stationRepository.addStation(stationName);
-        }
-        return stationRepository.findStationByName(stationName);
     }
 
     public void deleteLine(LineName lineName) {

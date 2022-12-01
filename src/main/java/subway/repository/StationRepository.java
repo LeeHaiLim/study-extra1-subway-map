@@ -51,6 +51,13 @@ public class StationRepository {
                 .orElseThrow(() -> new IllegalArgumentException("[ERROR] 존재하지 않는 역입니다."));
     }
 
+    public Station findOrMakeStation(StationName stationName) {
+        if (!isExistsStation(stationName)) {
+            addStation(stationName);
+        }
+        return findStationByName(stationName);
+    }
+
     public void init() {
         stations.clear();
         addStation(StationName.of("교대역"));
