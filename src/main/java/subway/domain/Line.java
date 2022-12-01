@@ -24,12 +24,19 @@ public class Line {
 
     public void addStationToLineByOrder(int index, Station station) {
         validStationDuplicate(station);
-        stationsBelongTo.add(index + 1, station);
+        validSectionIndex(index);
+        stations.add(index, station);
     }
 
     private void validStationDuplicate(Station station) {
-        if (stationsBelongTo.contains(station)) {
+        if (stations.contains(station)) {
             throw new IllegalArgumentException("[ERROR] 이미 속해있는 역입니다.");
+        }
+    }
+
+    private void validSectionIndex(int index) {
+        if (index > stations.size()) {
+            throw new IllegalArgumentException("[ERROR] 올바른 순서를 입력해주세요.");
         }
     }
 }

@@ -50,9 +50,9 @@ SECTION_ADD, SECTION_DELETE, BACK
 ### 지하철 노선 -> Line
 - [x] 노선 이름을 받아 노선 객체를 생성하여 반환하는 기능 -> of
 - [x] 상행 종점역과 하행 종점역으로 초기화 하는 기능 -> initLine
-- [ ] 지하철 노선의 지정된 순서에 역을 등록하는 기능 - addStationToLineByOrder
-  - [ ] 이미 등록되어있는 역인지 확인하는 기능 - validStationDuplicate
-  - [ ] 등록 가능한 순서인지 확인하는 기능 - validSectionIndex
+- [x] 지하철 노선의 지정된 순서에 역을 등록하는 기능 - addStationToLineByOrder
+  - [x] 이미 등록되어있는 역인지 확인하는 기능 - validStationDuplicate
+  - [x] 등록 가능한 순서인지 확인하는 기능 - validSectionIndex
 - [ ] 특정 역이 노선에 속해있는지 확인하는 기능 - isStationBelongToLine
 - [ ] 노선에 등록되어있는 역을 삭제하는 기능 - deleteStation
 - [ ] 노선에 등록되어있는 역의 개수를 반환하는 기능 - numberOfStationsInLine
