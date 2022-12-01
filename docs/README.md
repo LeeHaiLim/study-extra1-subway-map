@@ -64,20 +64,20 @@ SECTION_ADD, SECTION_DELETE, BACK
 ### 메인 메뉴 관련 기능 -> MainController
 
 #### 역 관리 관련 기능 -> StationController
-- [ ] 지하철 역을 등록하는 기능 실행 - runAddStation
-- [ ] 지하철 역을 삭제하는 기능 실행 - runDeleteStation
+- [x] 지하철 역을 등록하는 기능 실행 - runAddStation
+- [x] 지하철 역을 삭제하는 기능 실행 - runDeleteStation
 
 
 #### 노선 관리 관련 기능 -> LineController
-- [ ] 지하철 노선을 등록하는 기능 실행 - runAddLine
-- [ ] 지하철 노선을 삭제하는 기능 실행 - runDeleteLine
+- [x] 지하철 노선을 등록하는 기능 실행 - runAddLine
+- [x] 지하철 노선을 삭제하는 기능 실행 - runDeleteLine
 
 #### 구간 관리 관련 기능 -> SectionController
-- [ ] 지하철 노선을 등록하는 기능 실행 - runAddSection
-- [ ] 지하철 노선을 삭제하는 기능 실행 - runDeleteSection
+- [x] 지하철 노선을 등록하는 기능 실행 - runAddSection
+- [x] 지하철 노선을 삭제하는 기능 실행 - runDeleteSection
 
 ### 지하철 노선도 관련 기능 -> MapController
-- [ ] 지하철 노선도를 출력하는 기능 실행 - start
+- [x] 지하철 노선도를 출력하는 기능 실행 - start
 
 
 ### Service
