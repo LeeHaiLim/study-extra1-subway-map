@@ -25,9 +25,9 @@ class LineServiceTest {
     @DisplayName("노선 등록 테스트")
     @Test
     void addLineTest() {
-        lineService.addLine(LineName.of("교양선"), StationName.of("교대역"), StationName.of("양재시민의숲역"));
+        lineService.addLine(LineName.of("1호선"), StationName.of("강남역"), StationName.of("잠실역"));
         List<String> lineNames = lineService.getLineNames();
-        Assertions.assertThat(lineNames.contains("교양선")).isTrue();
+        Assertions.assertThat(lineNames.contains("1호선")).isTrue();
     }
 
     @DisplayName("같은 이름의 노선은 등록할 수 없습니다.")
@@ -42,10 +42,10 @@ class LineServiceTest {
     @DisplayName("노선 삭제 테스트")
     @Test
     void deleteLine() {
-        lineService.addLine(LineName.of("교양선"), StationName.of("교대역"), StationName.of("양재시민의숲역"));
-        lineService.deleteLine(LineName.of("교양선"));
+        lineService.addLine(LineName.of("1호선"), StationName.of("강남역"), StationName.of("잠실역"));
+        lineService.deleteLine(LineName.of("1호선"));
         List<String> lineNames = lineService.getLineNames();
-        Assertions.assertThat(lineNames.contains("교양선")).isFalse();
+        Assertions.assertThat(lineNames.contains("1호선")).isFalse();
     }
 
     @DisplayName("노선 이름 조회 테스트")
