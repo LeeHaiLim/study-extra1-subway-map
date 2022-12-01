@@ -45,5 +45,12 @@ public class LineRepository {
         return lines.stream()
                 .anyMatch(line -> line.isStationBelongToLine(station));
     }
+
+    public List<String> getLineNames() {
+        return lines.stream()
+                .map(Line::getName)
+                .map(LineName::toString)
+                .collect(Collectors.toUnmodifiableList());
+    }
     }
 }
