@@ -83,9 +83,9 @@ SECTION_ADD, SECTION_DELETE, BACK
 
 ### Service
 #### 역 관리 관련 기능 -> StationService
-- [ ] 지하철 역을 등록하는 기능 - addStation
-- [ ] 지하철 역을 삭제하는 기능 - deleteStation
-- [ ] 지하철역의 리스트를 조회하는 기능 - getStationNames
+- [x] 지하철 역을 등록하는 기능 - addStation
+- [x] 지하철 역을 삭제하는 기능 - deleteStation
+- [x] 지하철역의 리스트를 조회하는 기능 - getStationNames
 
 #### 노선 관리 관련 기능 -> LineService
 - [ ] 지하철 노선을 등록하는 기능 addLine
