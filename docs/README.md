@@ -58,6 +58,10 @@ SECTION_ADD, SECTION_DELETE, BACK
 - [x] 노선에 등록되어있는 역의 개수를 반환하는 기능 - numberOfStationsInLine
 - [x] 노선에 등록되어있는 역의 이름들을 반환하는 기능 - findStationNamesByLine
 
+### 지하철역 순서 -> Order
+- [x] 순서가 숫자인지 확인하는 기능
+- [x] 순서가 1이상인지 확인하는 기능
+
 ### 메인 메뉴 관련 기능 -> MainController
 
 #### 역 관리 관련 기능 -> StationController
