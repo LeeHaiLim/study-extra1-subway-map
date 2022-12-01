@@ -27,11 +27,10 @@ public class StationRepository {
             return true;
         }
         return false;
+    public static void deleteStation(Station station) {
+        stations.remove(station);
+    }
     }
 
-    public static void deleteStation(StationName name) {
-        if (!(stations.removeIf(station -> Objects.equals(station.getName(), name)))) {
-            throw new IllegalArgumentException("[ERROR] 존재하지 않는 역입니다.");
-        }
     }
 }
