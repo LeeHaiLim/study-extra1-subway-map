@@ -7,8 +7,6 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 class StationNameTest {
 
-
-
     @DisplayName("올바른 역이름 생성 확인")
     @ParameterizedTest
     @ValueSource(strings = {"잠실역", "고속터미널역"})
