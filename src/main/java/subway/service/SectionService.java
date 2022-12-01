@@ -12,7 +12,14 @@ public class SectionService {
     public void addSection(LineName lineName, StationName stationName, Order order) {
         Line line = lineRepository.findLineByName(lineName);
         Station station = stationRepository.findOrMakeStation(stationName);
+        validStationBelongToLine(station);
         line.addStationToLineByOrder(order, station);
+    }
+
+    private void validStationBelongToLine(Station station) {
+        if (lineRepository.isStationBelongToLine(station)) {
+            throw new IllegalArgumentException("[ERROR] 이미 다른 노선에 속해있는 역입니다.");
+        }
     }
 
     public void deleteSection(LineName lineName, StationName stationName) {

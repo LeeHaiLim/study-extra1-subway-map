@@ -93,6 +93,7 @@ SECTION_ADD, SECTION_DELETE, BACK
 
 #### 구간 관리 관련 기능 -> SectionService
 - [x] 지하철 구간을 등록하는 기능 addSection
+  - [x] 등록하려는 역이 이미 다른 노선에 속해있는지 확인하는 기능 - validStationBelongToLine
 - [x] 지하철 구간을 삭제하는 기능 - deleteSection
   - [x] 지하철 노선에 2개 이상의 역이 있는지 확인하는 기능 - checkLineContainOverTwoStation
 
