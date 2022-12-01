@@ -52,5 +52,13 @@ public class LineRepository {
                 .map(LineName::toString)
                 .collect(Collectors.toUnmodifiableList());
     }
+
+    public HashMap<String, List<String>> getSubwayMap() {
+        HashMap<String, List<String>> subwayMap = new HashMap<>();
+        lines.stream()
+                .forEach(line -> subwayMap.put(line.getName().toString(),
+                        line.findStationNamesByLine()));
+        return subwayMap;
+    }
     }
 }
