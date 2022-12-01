@@ -46,6 +46,14 @@ class StationServiceTest {
         Assertions.assertThat(stationNames.contains("잠실역")).isFalse();
     }
 
+    @DisplayName("노선에 등록된 역은 삭제될 수 없습니다.")
+    @Test
+    void deleteStationErrorTest() {
+        Assertions.assertThatThrownBy(()->stationService.deleteStation(StationName.of("강남역")))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("[ERROR] 노선에 등록된 역은 삭제할 수 없습니다.");
+    }
+
     @DisplayName("역이름조회 테스트")
     @Test
     void getStationNamesTest() {
